@@ -105,7 +105,9 @@ const translations = {
     common: {
       homeIntroBadge: 'Blue anime mood',
       detail: '去看详情', preview: '项目预览', browse: '浏览作品', read: '继续往下看', top: '回到顶部', playMusic: '播放音乐', viewSetting: '看看设定', enterPage: '进入页面',
-      musicPlay: '播放 BGM', musicPause: '暂停 BGM', musicRestart: '重新开始', musicVolume: '音量'
+      musicPlay: '播放 BGM', musicPause: '暂停 BGM', musicRestart: '重新开始', musicVolume: '音量',
+      musicMiniPlayer: '悬浮音乐', previousTrack: '上一首', nextTrack: '下一首', openMusicPage: '打开音乐页',
+      projectConcept: '项目概念', visualFocus: '视觉重点', useCases: '适合的使用场景', projectTypeLabel: '项目类型', keywordsLabel: '关键词', visualMoodLabel: '画面气质', recommendedUsageLabel: '推荐用途', previousWork: '上一篇作品', nextWork: '下一页作品', backToWorks: '返回作品展台'
     },
     home: {
       title: '我是 Asa，<span>一个爱看番也爱敲代码的社恐 i 人。</span>',
@@ -149,7 +151,7 @@ const translations = {
     },
     music: {
       badge: 'Opening theme', title: '我的 BGM 页面<span>和一点片头曲脑补</span>', desc: '我看番的时候总会特别记片头和片尾，所以写页面的时候，也很想给自己的小站留一段属于 Asa 的 BGM 氛围。',
-      note: '这里的旋律会自己循环生成，比较像我脑内反复播放的片头曲片段。', sideTitle: '我喜欢一边听一边发呆', sideDesc: '不管是写代码、改页面，还是单纯放空，我都很需要一段能把情绪慢慢托起来的 BGM。最好是那种一响起来，脑子里就自动出现夜空、电车和蓝色灯光的旋律。',
+      note: '这里会播放 assets/music 目录里的本地 mp3，切歌、循环和音量都按当前列表工作。', sideTitle: '我喜欢一边听一边发呆', sideDesc: '不管是写代码、改页面，还是单纯放空，我都很需要一段能把情绪慢慢托起来的 BGM。最好是那种一响起来，脑子里就自动出现夜空、电车和蓝色灯光的旋律。',
       lyric1: '“我总觉得，傍晚的风和片头曲前奏是同一种东西。”', lyric2: '“耳机一戴上，现实的声音就会退远一点，我自己的世界也会亮起来一点。”', lyric3: '“如果一个页面也有 BGM，那它大概就更像一集属于我的番外了。”'
     },
     articles: {
@@ -175,11 +177,9 @@ const translations = {
       a3Title: '一个社恐 i 人，到底为什么还要认真做个人主页', a3Desc: '也许正因为我不太擅长当面表达，所以才更想认真做一个能替我说话的页面。'
     },
     tracks: [
-      { title: '蓝色黄昏 OP', subtitle: 'Blue Twilight · 像放学后回家路上，耳机里刚好响起片头前奏的感觉', chip: '蓝色黄昏 OP' },
-      { title: '雨后街道 Theme', subtitle: 'After Rain Street · 玻璃反光、潮湿空气，还有城市静下来之后的呼吸感', chip: '雨后街道 Theme' },
-      { title: '终电海风 ED', subtitle: 'Last Train Seaside · 更安静一点，像一集番刚播完时留在心里的余温', chip: '终电海风 ED' }
+      { title: 'more than words', subtitle: '羊文学', chip: 'more than words' }
     ],
-    alerts: { webAudioUnsupported: '当前浏览器不支持 Web Audio API。' }
+    alerts: { webAudioUnsupported: '当前浏览器不支持 Web Audio API。', audioLoadFailed: '本地音频加载失败。请把 mp3 放到 assets/music 目录，或修改 script.js 里的歌曲路径。' }
   },
   ja: {
     pageTitle: 'アニメとコーディングが好きな Asa の個人サイト',
@@ -187,8 +187,10 @@ const translations = {
     brand: { name: 'Asa', tagline: 'アニメもコードも好きな青系の内向型' },
     nav: { home: 'ホーム', profile: 'キャラ設定', about: '私について', works: '作品', music: '音楽', articles: '記事', contact: '連絡先' },
     common: {
-      homeIntroBadge: 'Blue anime mood', detail: '詳細を見る', preview: 'プレビュー', browse: '作品を見る', read: '続きを読む', top: 'トップへ戻る', playMusic: '音楽を再生', viewSetting: '設定を見る', enterPage: 'ページへ',
-      musicPlay: 'BGM を再生', musicPause: 'BGM を停止', musicRestart: '最初から', musicVolume: '音量'
+      homeIntroBadge: '青いアニメムード', detail: '詳細を見る', preview: 'プレビュー', browse: '作品を見る', read: '続きを読む', top: 'トップへ戻る', playMusic: '音楽を再生', viewSetting: '設定を見る', enterPage: 'ページへ',
+      musicPlay: 'BGM を再生', musicPause: 'BGM を停止', musicRestart: '最初から', musicVolume: '音量',
+      musicMiniPlayer: 'フローティング音楽', previousTrack: '前の曲', nextTrack: '次の曲', openMusicPage: '音楽ページを開く',
+      projectConcept: 'コンセプト', visualFocus: 'ビジュアルのポイント', useCases: '向いている使い方', projectTypeLabel: 'プロジェクトタイプ', keywordsLabel: 'キーワード', visualMoodLabel: '画面の空気感', recommendedUsageLabel: 'おすすめ用途', previousWork: '前の作品', nextWork: '次の作品', backToWorks: '作品一覧へ戻る'
     },
     home: {
       title: '私は Asa。<span>アニメもコードも好きな、少し人見知りな i 人です。</span>',
@@ -197,8 +199,8 @@ const translations = {
       p1t: '好きなもの', p1d: 'アニメ、青い夜景、電車が来る前の風、イヤホンの中の OP、そして静かに光る画面。',
       p2t: 'コードを書くときの感覚', p2d: 'ページをただ組むのではなく、アニメのカットみたいに見せたいと思っています。',
       p3t: '残したい雰囲気', p3d: 'うるさくなく、目立ちすぎず、でも少しだけ「この人かわいいかも」と思ってもらえる空気。',
-      sceneChip: 'OPENING SCENE · ASA', sceneTitle: "Asa's Mood", sceneDesc: '現実の私が先に話しかけられないなら、このページに先に「こんにちは」と言ってもらおうと思いました。', stationTitle: '青い小さな駅 · Asa', station1: '次の駅：プロフィール / 作品 / 音楽 / 記事', station2: 'Slow introvert line',
-      mapBadge: 'My map', mapTitle: 'もっと私を知りたいなら', mapDesc: '下のページたちは、私のいろんな側面みたいなものです。設定も、作品も、気持ちも、少しずつここに置いてあります。',
+      sceneChip: 'オープニングシーン · ASA', sceneTitle: 'Asa のムード', sceneDesc: '現実の私が先に話しかけられないなら、このページに先に「こんにちは」と言ってもらおうと思いました。', stationTitle: '青い小さな駅 · Asa', station1: '次の駅：プロフィール / 作品 / 音楽 / 記事', station2: 'ゆっくり内向線',
+      mapBadge: 'マイマップ', mapTitle: 'もっと私を知りたいなら', mapDesc: '下のページたちは、私のいろんな側面みたいなものです。設定も、作品も、気持ちも、少しずつここに置いてあります。',
       c1t: 'キャラ設定', c1d: '私の設定、状態、好きなもの、隠しスキルまで見られます。',
       c2t: '私について', c2d: '好きなアニメや青色、口では言いにくい小さな気持ちを書いています。',
       c3t: '作品', c3d: '作ったページや育てている企画を、自分だけの絵コンテみたいに並べています。',
@@ -208,7 +210,7 @@ const translations = {
       ftBadge: 'Asa', ftTitle: '青い小宇宙に来てくれてありがとう', ftDesc: 'ここから少しでもアニメっぽさや夜風の感じ、あるいは Asa のゆっくりした気持ちが伝わったなら、それだけで十分です。', ftInfoTitle: 'キーワード', ftInfoDesc: 'アニメ / コーディング / 青 / 電車 / 夜景 / 内向型 / OP 脳'
     },
     profile: {
-      badge: 'Character archive', title: 'Asa のキャラ設定<span>と青い設定ボード</span>', desc: 'もし私が日常系アニメのキャラだったら、たぶん静かで、いつもイヤホンをしていて、青い夜景と電車が好きで、話しかけやすそうなのに自分からはなかなか話せないタイプだと思います。',
+      badge: 'キャラクターアーカイブ', title: 'Asa のキャラ設定<span>と青い設定ボード</span>', desc: 'もし私が日常系アニメのキャラだったら、たぶん静かで、いつもイヤホンをしていて、青い夜景と電車が好きで、話しかけやすそうなのに自分からはなかなか話せないタイプだと思います。',
       tag1: 'MAIN CHARACTER · ASA', tag2: 'BLUE HOUR / AFTER SCHOOL', name: 'Asa',
       meta1L: '属性', meta1V: 'アニメもコードも好きな内向型', meta2L: 'キーワード', meta2V: '青、夜景、電車、イヤホン、コード', meta3L: '隠し属性', meta3V: 'スロースターター、オタク、細部好き、ED に弱い',
       worldTitle: '私の小さな世界観', worldDesc: 'もし私の日常が静かな番外編になるなら、たぶん夕方や夜にイヤホンをして青い空の下を歩き、そのあと家でアニメを見たりコードを書いたりする、そんなテンポです。',
@@ -219,30 +221,30 @@ const translations = {
       k1d: 'ページをきれいに、細かく整える作業がすごく好きです。', k2d: 'アニメに出てくる青い空、風、光、電車の感じを自然に拾ってしまいます。', k3d: '派手な動きより、呼吸するような柔らかい動きを好みます。', k4d: '自分で多くを話すより、ページに少しずつ語ってもらう方が得意です。'
     },
     about: {
-      badge: 'About me', title: '私について<span>と、口では言いにくいこと</span>', desc: '現実の私が自己紹介をうまくできないなら、ここがその代わりになります。',
+      badge: '私について', title: '私について<span>と、口では言いにくいこと</span>', desc: '現実の私が自己紹介をうまくできないなら、ここがその代わりになります。',
       mainTitle: '私は Asa。アニメもコードも好きな、少し人見知りな i 人です。', mainDesc: '一言で言えば、アニメが好きで、青が好きで、夜景が好きで、一人で静かにコードを書くのが好きな人です。にぎやかに自分を説明するよりも、好きなものをページに少しずつ入れていく方が、私らしいと感じます。このサイトの雰囲気そのものが、かなり私に近いです。', quote: '「自分でうまく話せないなら、ページに少しずつ代わりに話してもらえばいい。」',
       sideTitle: '好きなものリスト', sideDesc: '夕方の電車、放課後の歩道橋、夜に青くなる空、街灯がつく瞬間、イヤホンから流れる OP、そして静かそうなのに感情をたくさん抱えているキャラ。そんなものにすぐ心を持っていかれます。',
       a1l: '好きな色', a1v: '青。夜空に近いほど好き', a2l: '普段の状態', a2v: '人見知りの i 人、仲良くなると少し話せる', a3l: '弱い要素', a3v: '電車、夜景、イヤホン、風、OP', a4l: 'ページで大事にすること', a4v: '空気感、テンポ、“カットっぽさ”'
     },
     works: {
-      badge: 'Portfolio', title: '作ったページ<span>と残しておきたい空気</span>', desc: 'ここにある作品は、機能の練習だけではなく、私の好きな青い夜景やアニメっぽさをページにした小さなカット集です。',
+      badge: 'ポートフォリオ', title: '作ったページ<span>と残しておきたい空気</span>', desc: 'ここにある作品は、機能の練習だけではなく、私の好きな青い夜景やアニメっぽさをページにした小さなカット集です。',
       c1label: 'Project 01 · Twilight Platform', c1m1: '個人サイト', c1m2: '夕方の電車', c1t: '私の中の黄昏ホーム', c1d: '夕焼けが消えきる前、列車が来る直前の静かな空気を残したかったページです。', c1a2: '関連メモ',
       c2label: 'Project 02 · After Rain Bridge', c2m1: '感情特集', c2m2: '雨上がりの街', c2t: '雨上がりの歩道橋の青い気持ち', c2d: 'ガラスの反射、街灯、湿った空気。そんな“雨が止んだ直後の街”が好きで作りました。',
       c3label: 'Project 03 · Last Train Seaside', c3m1: '物語ページ', c3m2: '海辺の終電', c3t: '海辺の終電ミニシアター', c3d: '海風、夕焼け、レール、出発の気配。私の好きな“物語が始まりそうな感じ”を集めたページです。', c3a2: 'BGM と一緒に'
     },
     music: {
-      badge: 'Opening theme', title: '私の BGM ページ<span>と OP の妄想</span>', desc: '私はアニメを見るとき、OP と ED をかなり大事にするので、自分のサイトにもそういう空気を置きたくなります。',
-      note: 'ここで流れる旋律は、自分の中で何度も再生される OP の断片みたいなものです。', sideTitle: '音を流しながらぼーっとするのが好き', sideDesc: 'コードを書くときも、ページを直すときも、少し何もしたくないときも、感情をゆっくり支えてくれる BGM が必要です。青い夜、電車、街灯が思い浮かぶような旋律が理想です。',
+      badge: 'オープニングテーマ', title: '私の BGM ページ<span>と OP の妄想</span>', desc: '私はアニメを見るとき、OP と ED をかなり大事にするので、自分のサイトにもそういう空気を置きたくなります。',
+      note: 'ここでは assets/music に入れたローカル mp3 を再生します。切り替え、ループ、音量もこのプレイヤーで操作できます。', sideTitle: '音を流しながらぼーっとするのが好き', sideDesc: 'コードを書くときも、ページを直すときも、少し何もしたくないときも、感情をゆっくり支えてくれる BGM が必要です。青い夜、電車、街灯が思い浮かぶような旋律が理想です。',
       lyric1: '「夕方の風と OP の前奏は、たぶん同じ種類のものだと思う。」', lyric2: '「イヤホンをつけると、現実の音が少し遠くなって、自分の世界が少し近くなる。」', lyric3: '「もしページにも BGM があるなら、それはたぶん私の番外編になる。」'
     },
     articles: {
-      badge: 'Articles', title: '私の記事メモ<span>と、ちゃんとした独り言</span>', desc: 'アニメ、ページ、コード、気持ちについての小さな記録を置いています。口では言いにくいことほど、ここに書くことが多いです。',
+      badge: '記事', title: '私の記事メモ<span>と、ちゃんとした独り言</span>', desc: 'アニメ、ページ、コード、気持ちについての小さな記録を置いています。口では言いにくいことほど、ここに書くことが多いです。',
       c1m1: 'アニメ感想 / デザイン随筆', c1t: 'どうして私は青い黄昏のアニメカットをページに持ち込みたくなるのか', c1d: '私のページの発想は、トレンドよりも、アニメの黄昏や電車のカットから来ていることが多いです。',
       c2m1: 'フロントエンド記録', c2t: 'どうして私はページをアニメの絵コンテみたいに書きたくなるのか', c2d: '情報を並べるだけではなく、カメラワークみたいに見せたいといつも思っています。',
       c3m1: '独り言 / 制作記録', c3t: '人見知りの i 人が、それでも真剣に個人サイトを作る理由', c3d: '直接うまく話せないからこそ、ページに代わりに語ってほしいと思っているのかもしれません。'
     },
     contact: {
-      badge: 'Contact', title: '連絡先<span>と補足メモ</span>', desc: 'アニメ、コード、青い夜景や電車のシーンが好きなら、ここからゆっくり見つけてください。',
+      badge: '連絡先', title: '連絡先<span>と補足メモ</span>', desc: 'アニメ、コード、青い夜景や電車のシーンが好きなら、ここからゆっくり見つけてください。',
       s1t: '今のサイト状態', s1d: 'このサイトは今、多ページ構成になっていて、それぞれが私の小さな設定分岐のようになっています。情報置き場というより、“私の好きなものと考え方を少しずつ見せる場所”です。',
       s2t: 'この先ゆっくり足したいもの', s2d: 'もっと追っている作品の話、ちゃんとした作品詳細、記事の追加、静かなメッセージ欄などを少しずつ足していきたいです。',
       st1l: '補完したい項目', st1v: 'タイムライン / ギャラリー / メッセージ', st2l: '内容の方向', st2v: '作品 / アニメ感想 / コード記録', st3l: '雰囲気', st3v: '青、夜景、電車、静かなアニメ感', st4l: '公開先', st4v: 'GitHub Pages / Vercel / Netlify'
@@ -258,11 +260,9 @@ const translations = {
       a3Title: '人見知りの i 人が、それでも真剣に個人サイトを作る理由', a3Desc: '直接言いにくいことほど、ページの中なら少しずつ形にできる気がする。その感覚についての記録です。'
     },
     tracks: [
-      { title: 'Blue Twilight OP', subtitle: '放課後の帰り道みたいな、少し切なくて静かな前奏感', chip: 'Blue Twilight OP' },
-      { title: 'After Rain Street Theme', subtitle: '雨上がりのガラス反射と、街が静かになったあとの呼吸みたいな音', chip: 'After Rain Street' },
-      { title: 'Last Train Seaside ED', subtitle: '一話が終わったあと、胸の中に少しだけ残る余温みたいなメロディ', chip: 'Last Train ED' }
+      { title: 'more than words', subtitle: '羊文学', chip: 'more than words' }
     ],
-    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.' }
+    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.', audioLoadFailed: 'Local audio could not be loaded. Put your mp3 files in assets/music or update the track paths in script.js.' }
   },
   en: {
     pageTitle: 'Asa — anime, code, and blue nights',
@@ -271,7 +271,9 @@ const translations = {
     nav: { home: 'Home', profile: 'Profile', about: 'About', works: 'Works', music: 'Music', articles: 'Articles', contact: 'Contact' },
     common: {
       homeIntroBadge: 'Blue anime mood', detail: 'View details', preview: 'Preview', browse: 'Browse work', read: 'Read more', top: 'Back to top', playMusic: 'Play music', viewSetting: 'View setting', enterPage: 'Open page',
-      musicPlay: 'Play BGM', musicPause: 'Pause BGM', musicRestart: 'Restart', musicVolume: 'Volume'
+      musicPlay: 'Play BGM', musicPause: 'Pause BGM', musicRestart: 'Restart', musicVolume: 'Volume',
+      musicMiniPlayer: 'Floating music', previousTrack: 'Previous track', nextTrack: 'Next track', openMusicPage: 'Open music page',
+      projectConcept: 'Concept', visualFocus: 'Visual focus', useCases: 'Best use cases', projectTypeLabel: 'Project type', keywordsLabel: 'Keywords', visualMoodLabel: 'Visual mood', recommendedUsageLabel: 'Recommended use', previousWork: 'Previous work', nextWork: 'Next work', backToWorks: 'Back to works'
     },
     home: {
       title: 'I’m Asa, <span>an introverted i-person who loves anime and coding.</span>',
@@ -315,7 +317,7 @@ const translations = {
     },
     music: {
       badge: 'Opening theme', title: 'My BGM Page <span>& a little opening-theme imagination</span>', desc: 'I care a lot about anime openings and endings, so I wanted my own site to have that kind of mood too.',
-      note: 'The loop here feels like fragments of an opening theme that keeps replaying in my head.', sideTitle: 'I like listening and drifting off', sideDesc: 'Whether I am coding, fixing a page, or doing nothing, I need music that can gently hold up my feelings. Ideally it sounds like blue night, trains, and lights.',
+      note: 'This player reads local mp3 files from assets/music, with track switching, looping, and volume control.', sideTitle: 'I like listening and drifting off', sideDesc: 'Whether I am coding, fixing a page, or doing nothing, I need music that can gently hold up my feelings. Ideally it sounds like blue night, trains, and lights.',
       lyric1: '“I think the evening wind and the first seconds of an opening theme are the same kind of thing.”', lyric2: '“When I put on my earphones, the sound of reality moves a little farther away.”', lyric3: '“If a page has BGM too, maybe it becomes an extra episode of me.”'
     },
     articles: {
@@ -341,11 +343,9 @@ const translations = {
       a3Title: 'Why an introverted i-person still takes a personal site seriously', a3Desc: 'Sometimes a page can say what I cannot say directly, and that may be exactly why I keep building one.'
     },
     tracks: [
-      { title: 'Blue Twilight OP', subtitle: 'A quiet opening that feels like walking home after school with earphones on', chip: 'Blue Twilight OP' },
-      { title: 'After Rain Street Theme', subtitle: 'Reflections, damp air, and the soft breathing of a city after rain', chip: 'After Rain Street' },
-      { title: 'Last Train Seaside ED', subtitle: 'A softer ending melody, like the warmth left after an episode ends', chip: 'Last Train ED' }
+      { title: 'more than words', subtitle: 'Hitsujibungaku', chip: 'more than words' }
     ],
-    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.' }
+    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.', audioLoadFailed: 'Local audio could not be loaded. Put your mp3 files in assets/music or update the track paths in script.js.' }
   }
 };
 
@@ -403,8 +403,100 @@ const savedLang = (() => {
 const initialLang = savedLang && translations[savedLang] ? savedLang : detectBrowserLang();
 applyTranslations(initialLang);
 
+const MUSIC_STORAGE_KEY = 'mypage-music-state-v1';
+const MUSIC_TRACKS = [
+  { src: './assets/music/more-than-words-hitujibungaku.mp3' }
+];
+
+const getDict = () => translations[window.__currentLang] || translations['zh-CN'];
+const formatTime = (seconds) => {
+  const safe = Number.isFinite(seconds) ? Math.max(0, Math.floor(seconds)) : 0;
+  const m = String(Math.floor(safe / 60)).padStart(2, '0');
+  const s = String(safe % 60).padStart(2, '0');
+  return `${m}:${s}`;
+};
+const clampTrackIndex = (value) => {
+  const safe = Number(value);
+  if (!Number.isInteger(safe) || safe < 0 || safe >= MUSIC_TRACKS.length) return 0;
+  return safe;
+};
+const loadMusicState = () => {
+  try {
+    const raw = localStorage.getItem(MUSIC_STORAGE_KEY);
+    const parsed = raw ? JSON.parse(raw) : null;
+    return {
+      currentTrackIndex: clampTrackIndex(parsed?.currentTrackIndex),
+      volume: Math.min(1, Math.max(0, Number(parsed?.volume ?? 0.58) || 0.58)),
+      currentTime: Math.max(0, Number(parsed?.currentTime ?? 0) || 0),
+      isPlaying: Boolean(parsed?.isPlaying),
+      updatedAt: Math.max(0, Number(parsed?.updatedAt ?? 0) || 0)
+    };
+  } catch {
+    return { currentTrackIndex: 0, volume: 0.58, currentTime: 0, isPlaying: false, updatedAt: 0 };
+  }
+};
+const saveMusicState = (state) => {
+  try {
+    localStorage.setItem(MUSIC_STORAGE_KEY, JSON.stringify({
+      currentTrackIndex: clampTrackIndex(state.currentTrackIndex),
+      volume: Math.min(1, Math.max(0, Number(state.volume ?? 0.58) || 0.58)),
+      currentTime: Math.max(0, Number(state.currentTime ?? 0) || 0),
+      isPlaying: Boolean(state.isPlaying),
+      updatedAt: Number(state.updatedAt ?? Date.now()) || Date.now()
+    }));
+  } catch {}
+};
+
+const createFloatingMusicOrb = () => {
+  const container = document.createElement('div');
+  container.className = 'music-orb';
+  container.innerHTML = `
+    <button class="music-orb-toggle" type="button" aria-expanded="false">
+      <span class="music-orb-pulse"></span>
+      <span class="music-orb-icon">♪</span>
+    </button>
+    <div class="music-orb-panel is-hidden">
+      <div class="music-orb-head">
+        <strong class="music-orb-title"></strong>
+        <span class="music-orb-subtitle"></span>
+      </div>
+      <div class="music-orb-progress"><span class="music-orb-progress-fill"></span></div>
+      <div class="music-orb-time"><span class="music-orb-current">00:00</span><span class="music-orb-total">00:00</span></div>
+      <div class="music-orb-actions">
+        <button class="mini-link music-orb-prev" type="button"></button>
+        <button class="mini-link music-orb-play" type="button"></button>
+        <button class="mini-link music-orb-next" type="button"></button>
+      </div>
+      <div class="music-orb-volume-wrap">
+        <label class="music-orb-volume-label" for="music-orb-volume"></label>
+        <input class="music-orb-volume" id="music-orb-volume" type="range" min="0" max="100" value="58" />
+      </div>
+      <a class="mini-link music-orb-link" href="./music.html"></a>
+    </div>
+  `;
+  document.body.appendChild(container);
+  return {
+    container,
+    toggle: container.querySelector('.music-orb-toggle'),
+    panel: container.querySelector('.music-orb-panel'),
+    title: container.querySelector('.music-orb-title'),
+    subtitle: container.querySelector('.music-orb-subtitle'),
+    progressFill: container.querySelector('.music-orb-progress-fill'),
+    currentTime: container.querySelector('.music-orb-current'),
+    totalTime: container.querySelector('.music-orb-total'),
+    prev: container.querySelector('.music-orb-prev'),
+    play: container.querySelector('.music-orb-play'),
+    next: container.querySelector('.music-orb-next'),
+    volume: container.querySelector('.music-orb-volume'),
+    volumeLabel: container.querySelector('.music-orb-volume-label'),
+    link: container.querySelector('.music-orb-link')
+  };
+};
+
 const playerCard = document.getElementById('music-player-card');
-if (playerCard) {
+const floatingOrb = createFloatingMusicOrb();
+
+(() => {
   const playToggle = document.getElementById('play-toggle');
   const restartTrack = document.getElementById('restart-track');
   const volumeInput = document.getElementById('volume');
@@ -414,30 +506,46 @@ if (playerCard) {
   const currentTimeEl = document.getElementById('current-time');
   const totalTimeEl = document.getElementById('total-time');
   const trackButtons = Array.from(document.querySelectorAll('.track-chip'));
+  const audio = new Audio();
+  const savedState = loadMusicState();
+  const musicState = {
+    currentTrackIndex: savedState.currentTrackIndex,
+    isPlaying: false,
+    volume: savedState.volume,
+    currentTime: savedState.currentTime,
+    wasPlayingBeforeHide: false,
+    hydratedFromStorage: false
+  };
 
-  const tracks = [
-    { bpm: 92, progression: [{ root: 62, chord: [0, 4, 7] }, { root: 69, chord: [0, 3, 7] }, { root: 67, chord: [0, 4, 7] }, { root: 65, chord: [0, 4, 7] }], melody: [0, 4, 7, 9, 7, 4, 2, 4], sparkle: [12, null, 11, null, 12, null, 9, null] },
-    { bpm: 84, progression: [{ root: 57, chord: [0, 3, 7] }, { root: 64, chord: [0, 4, 7] }, { root: 62, chord: [0, 4, 7] }, { root: 69, chord: [0, 3, 7] }], melody: [0, 3, 7, 10, 7, 3, 2, 3], sparkle: [12, null, 10, null, 12, null, 8, null] },
-    { bpm: 78, progression: [{ root: 59, chord: [0, 4, 7] }, { root: 66, chord: [0, 4, 7] }, { root: 64, chord: [0, 3, 7] }, { root: 62, chord: [0, 4, 7] }], melody: [0, 2, 4, 7, 9, 7, 4, 2], sparkle: [11, null, 12, null, 9, null, 7, null] }
-  ];
+  audio.preload = 'metadata';
+  audio.loop = true;
+  audio.volume = musicState.volume;
 
-  const musicState = { audioContext: null, masterGain: null, output: null, schedulerId: null, progressId: null, currentTrackIndex: 0, isPlaying: false, currentStep: 0, nextStepTime: 0, stepDuration: 0, loopDuration: 0, startedAt: 0 };
+  const syncState = () => {
+    saveMusicState({
+      currentTrackIndex: musicState.currentTrackIndex,
+      volume: audio.volume,
+      currentTime: audio.currentTime,
+      isPlaying: musicState.isPlaying,
+      updatedAt: Date.now()
+    });
+  };
 
-  const midiToFreq = (midi) => 440 * Math.pow(2, (midi - 69) / 12);
-  const formatTime = (seconds) => {
-    const safe = Math.max(0, Math.floor(seconds));
-    const m = String(Math.floor(safe / 60)).padStart(2, '0');
-    const s = String(safe % 60).padStart(2, '0');
-    return `${m}:${s}`;
+  const setPlayingUI = (isPlaying) => {
+    musicState.isPlaying = isPlaying;
+    if (playerCard) playerCard.classList.toggle('playing', isPlaying);
+    floatingOrb.container.classList.toggle('playing', isPlaying);
+    updatePlayLabel();
+    syncState();
   };
 
   const updateTrackInfo = () => {
-    const dict = translations[window.__currentLang] || translations['zh-CN'];
-    const track = tracks[musicState.currentTrackIndex];
+    const dict = getDict();
     const text = dict.tracks[musicState.currentTrackIndex];
-    trackTitle.textContent = text.title;
-    trackSubtitle.textContent = text.subtitle;
-    totalTimeEl.textContent = formatTime(track.progression.length * 8 * (60 / track.bpm / 2));
+    if (trackTitle) trackTitle.textContent = text.title;
+    if (trackSubtitle) trackSubtitle.textContent = text.subtitle;
+    floatingOrb.title.textContent = text.title;
+    floatingOrb.subtitle.textContent = text.subtitle;
     trackButtons.forEach((button, index) => {
       button.classList.toggle('active', index === musicState.currentTrackIndex);
       button.textContent = dict.tracks[index].chip;
@@ -445,168 +553,189 @@ if (playerCard) {
   };
 
   const updatePlayLabel = () => {
-    const dict = translations[window.__currentLang] || translations['zh-CN'];
-    playToggle.textContent = musicState.isPlaying ? dict.common.musicPause : dict.common.musicPlay;
-    restartTrack.textContent = dict.common.musicRestart;
-    const volumeLabel = document.querySelector('label[for="volume"]');
-    if (volumeLabel) volumeLabel.textContent = dict.common.musicVolume;
+    const dict = getDict();
+    if (playToggle) playToggle.textContent = musicState.isPlaying ? dict.common.musicPause : dict.common.musicPlay;
+    if (restartTrack) restartTrack.textContent = dict.common.musicRestart;
+    if (volumeInput) {
+      const volumeLabel = document.querySelector('label[for="volume"]');
+      if (volumeLabel) volumeLabel.textContent = dict.common.musicVolume;
+    }
+    floatingOrb.play.textContent = musicState.isPlaying ? dict.common.musicPause : dict.common.musicPlay;
+    floatingOrb.prev.textContent = dict.common.previousTrack;
+    floatingOrb.next.textContent = dict.common.nextTrack;
+    floatingOrb.volumeLabel.textContent = dict.common.musicVolume;
+    floatingOrb.link.textContent = dict.common.openMusicPage;
+    floatingOrb.toggle.setAttribute('aria-label', dict.common.musicMiniPlayer);
+  };
+
+  const updateProgress = () => {
+    const duration = Number.isFinite(audio.duration) ? audio.duration : 0;
+    const current = Number.isFinite(audio.currentTime) ? audio.currentTime : 0;
+    if (progressFill) progressFill.style.width = duration > 0 ? `${(current / duration) * 100}%` : '0%';
+    if (currentTimeEl) currentTimeEl.textContent = formatTime(current);
+    if (totalTimeEl) totalTimeEl.textContent = formatTime(duration);
+    floatingOrb.progressFill.style.width = duration > 0 ? `${(current / duration) * 100}%` : '0%';
+    floatingOrb.currentTime.textContent = formatTime(current);
+    floatingOrb.totalTime.textContent = formatTime(duration);
+    musicState.currentTime = current;
+    syncState();
+  };
+
+  const setVolume = (volume, shouldSync = true) => {
+    const safe = Math.min(1, Math.max(0, Number(volume) || 0));
+    audio.volume = safe;
+    musicState.volume = safe;
+    if (volumeInput) volumeInput.value = String(Math.round(safe * 100));
+    floatingOrb.volume.value = String(Math.round(safe * 100));
+    if (shouldSync) syncState();
+  };
+
+  const applyTrack = (index, options = {}) => {
+    const { autoplay = false, resumeTime = 0, preservePlayingState = false } = options;
+    musicState.currentTrackIndex = clampTrackIndex(index);
+    audio.src = MUSIC_TRACKS[musicState.currentTrackIndex].src;
+    audio.load();
+    updateTrackInfo();
+    updateProgress();
+
+    const setInitialTime = () => {
+      if (resumeTime > 0) {
+        try { audio.currentTime = resumeTime; } catch {}
+      }
+    };
+
+    audio.addEventListener('loadedmetadata', setInitialTime, { once: true });
+
+    if (autoplay) {
+      audio.play().then(() => {
+        setPlayingUI(true);
+      }).catch(() => {
+        setPlayingUI(false);
+        alert(getDict().alerts.audioLoadFailed);
+      });
+    } else if (!preservePlayingState) {
+      setPlayingUI(false);
+    }
+    syncState();
+  };
+
+  const getProjectedTime = (state, duration = Number.isFinite(audio.duration) ? audio.duration : 0) => {
+    const base = Math.max(0, Number(state.currentTime ?? 0) || 0);
+    if (!state.isPlaying) return base;
+    const elapsed = Math.max(0, (Date.now() - (Number(state.updatedAt ?? 0) || 0)) / 1000);
+    if (duration > 0) return (base + elapsed) % duration;
+    return base + elapsed;
+  };
+
+  const playCurrent = async () => {
+    if (!audio.src) applyTrack(musicState.currentTrackIndex, { autoplay: false, resumeTime: musicState.currentTime });
+    try {
+      await audio.play();
+      setPlayingUI(true);
+    } catch {
+      setPlayingUI(false);
+      alert(getDict().alerts.audioLoadFailed);
+    }
+  };
+
+  const pauseCurrent = () => {
+    audio.pause();
+    setPlayingUI(false);
+  };
+
+  const switchTrack = (index, keepPlaying = musicState.isPlaying) => {
+    applyTrack(index, { autoplay: keepPlaying, resumeTime: 0 });
+  };
+
+  const switchRelativeTrack = (direction) => {
+    const nextIndex = (musicState.currentTrackIndex + direction + MUSIC_TRACKS.length) % MUSIC_TRACKS.length;
+    switchTrack(nextIndex, musicState.isPlaying);
   };
 
   window.__updateTrackInfo = updateTrackInfo;
   window.__updatePlayLabel = updatePlayLabel;
 
-  const ensureAudio = async () => {
-    if (!musicState.audioContext) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) {
-        const dict = translations[window.__currentLang] || translations['zh-CN'];
-        alert(dict.alerts.webAudioUnsupported);
-        return false;
-      }
-      musicState.audioContext = new AudioContextClass();
-      const filter = musicState.audioContext.createBiquadFilter();
-      filter.type = 'lowpass';
-      filter.frequency.value = 2400;
-      musicState.masterGain = musicState.audioContext.createGain();
-      musicState.masterGain.gain.value = Number(volumeInput.value) / 100;
-      filter.connect(musicState.masterGain);
-      musicState.masterGain.connect(musicState.audioContext.destination);
-      musicState.output = filter;
-    }
-    if (musicState.audioContext.state === 'suspended') await musicState.audioContext.resume();
-    return true;
-  };
-
-  const playVoice = (frequency, startTime, duration, options = {}) => {
-    const ctx = musicState.audioContext;
-    if (!ctx) return;
-    const { type = 'sine', gain = 0.03, attack = 0.02, release = 0.12, detune = 0 } = options;
-    const oscillator = ctx.createOscillator();
-    const envelope = ctx.createGain();
-    oscillator.type = type;
-    oscillator.frequency.setValueAtTime(frequency, startTime);
-    oscillator.detune.value = detune;
-    envelope.gain.setValueAtTime(0.0001, startTime);
-    envelope.gain.linearRampToValueAtTime(gain, startTime + attack);
-    envelope.gain.exponentialRampToValueAtTime(0.0001, startTime + duration + release);
-    oscillator.connect(envelope);
-    envelope.connect(musicState.output);
-    oscillator.start(startTime);
-    oscillator.stop(startTime + duration + release + 0.05);
-  };
-
-  const schedulePad = (root, chord, startTime, duration) => {
-    chord.forEach((interval, index) => {
-      playVoice(midiToFreq(root + interval), startTime, duration, { type: 'sine', gain: 0.012, attack: 0.08, release: 0.36, detune: index === 1 ? -3 : index === 2 ? 3 : 0 });
-    });
-  };
-
-  const scheduleLead = (midi, startTime, duration) => {
-    const frequency = midiToFreq(midi);
-    playVoice(frequency, startTime, duration, { type: 'triangle', gain: 0.024, attack: 0.01, release: 0.12 });
-    playVoice(frequency * 2, startTime, duration * 0.46, { type: 'sine', gain: 0.005, attack: 0.008, release: 0.08 });
-  };
-
-  const scheduleBass = (midi, startTime, duration) => {
-    playVoice(midiToFreq(midi), startTime, duration, { type: 'sine', gain: 0.024, attack: 0.02, release: 0.14 });
-  };
-
-  const scheduleSparkle = (midi, startTime, duration) => {
-    playVoice(midiToFreq(midi), startTime, duration, { type: 'triangle', gain: 0.008, attack: 0.005, release: 0.1 });
-  };
-
-  const scheduleStep = (stepIndex, time) => {
-    const track = tracks[musicState.currentTrackIndex];
-    const barLength = 8;
-    const sequenceLength = track.progression.length * barLength;
-    const sequenceStep = stepIndex % sequenceLength;
-    const progression = track.progression[Math.floor(sequenceStep / barLength)];
-    const stepInBar = sequenceStep % barLength;
-    const root = progression.root;
-    if (stepInBar === 0) schedulePad(root, progression.chord, time, musicState.stepDuration * 7.4);
-    if (stepInBar === 0 || stepInBar === 4) scheduleBass(root - 12, time, musicState.stepDuration * 2.6);
-    const melodyOffset = track.melody[stepInBar];
-    if (melodyOffset !== null && melodyOffset !== undefined) scheduleLead(root + melodyOffset, time + 0.01, musicState.stepDuration * 0.8);
-    const sparkleOffset = track.sparkle[stepInBar];
-    if (sparkleOffset !== null && sparkleOffset !== undefined) scheduleSparkle(root + sparkleOffset, time + musicState.stepDuration * 0.52, musicState.stepDuration * 0.34);
-  };
-
-  const scheduler = () => {
-    if (!musicState.audioContext) return;
-    while (musicState.nextStepTime < musicState.audioContext.currentTime + 0.2) {
-      scheduleStep(musicState.currentStep, musicState.nextStepTime);
-      musicState.nextStepTime += musicState.stepDuration;
-      musicState.currentStep += 1;
-    }
-  };
-
-  const updateProgress = () => {
-    if (!musicState.isPlaying || !musicState.audioContext) {
-      progressFill.style.width = '0%';
-      currentTimeEl.textContent = '00:00';
-      return;
-    }
-    const elapsed = Math.max(0, musicState.audioContext.currentTime - musicState.startedAt);
-    const current = elapsed % musicState.loopDuration;
-    progressFill.style.width = `${(current / musicState.loopDuration) * 100}%`;
-    currentTimeEl.textContent = formatTime(current);
-    musicState.progressId = requestAnimationFrame(updateProgress);
-  };
-
-  const stopPlayback = () => {
-    if (musicState.schedulerId) clearInterval(musicState.schedulerId);
-    if (musicState.progressId) cancelAnimationFrame(musicState.progressId);
-    musicState.schedulerId = null;
-    musicState.progressId = null;
-    musicState.isPlaying = false;
-    updatePlayLabel();
-    playerCard.classList.remove('playing');
-    progressFill.style.width = '0%';
-    currentTimeEl.textContent = '00:00';
-  };
-
-  const startPlayback = async (restart = false) => {
-    const ready = await ensureAudio();
-    if (!ready) return;
-    if (musicState.isPlaying && !restart) return;
-    if (musicState.isPlaying && restart) stopPlayback();
-    const track = tracks[musicState.currentTrackIndex];
-    musicState.stepDuration = 60 / track.bpm / 2;
-    musicState.loopDuration = track.progression.length * 8 * musicState.stepDuration;
-    musicState.currentStep = 0;
-    musicState.nextStepTime = musicState.audioContext.currentTime + 0.05;
-    musicState.startedAt = musicState.audioContext.currentTime;
-    musicState.schedulerId = setInterval(scheduler, 25);
-    musicState.isPlaying = true;
-    updatePlayLabel();
-    playerCard.classList.add('playing');
-    updateProgress();
-  };
-
-  playToggle.addEventListener('click', async () => {
-    if (!musicState.isPlaying) await startPlayback();
-    else stopPlayback();
+  playToggle?.addEventListener('click', () => {
+    if (musicState.isPlaying) pauseCurrent();
+    else playCurrent();
   });
 
-  restartTrack.addEventListener('click', () => startPlayback(true));
+  restartTrack?.addEventListener('click', async () => {
+    if (!audio.src) applyTrack(musicState.currentTrackIndex, { autoplay: false, resumeTime: 0 });
+    audio.currentTime = 0;
+    await playCurrent();
+    updateProgress();
+  });
 
-  volumeInput.addEventListener('input', () => {
-    if (musicState.masterGain && musicState.audioContext) {
-      const now = musicState.audioContext.currentTime;
-      const value = Number(volumeInput.value) / 100;
-      musicState.masterGain.gain.cancelScheduledValues(now);
-      musicState.masterGain.gain.linearRampToValueAtTime(value, now + 0.05);
-    }
+  volumeInput?.addEventListener('input', () => {
+    setVolume(Number(volumeInput.value) / 100);
   });
 
   trackButtons.forEach((button, index) => {
-    button.addEventListener('click', async () => {
-      musicState.currentTrackIndex = index;
-      updateTrackInfo();
-      if (musicState.isPlaying) await startPlayback(true);
-    });
+    button.addEventListener('click', () => switchTrack(index, musicState.isPlaying));
   });
 
+  floatingOrb.toggle.addEventListener('click', () => {
+    const expanded = floatingOrb.toggle.getAttribute('aria-expanded') === 'true';
+    floatingOrb.toggle.setAttribute('aria-expanded', String(!expanded));
+    floatingOrb.panel.classList.toggle('is-hidden', expanded);
+  });
+
+  floatingOrb.play.addEventListener('click', () => {
+    if (musicState.isPlaying) pauseCurrent();
+    else playCurrent();
+  });
+  floatingOrb.prev.addEventListener('click', () => switchRelativeTrack(-1));
+  floatingOrb.next.addEventListener('click', () => switchRelativeTrack(1));
+  floatingOrb.volume.addEventListener('input', () => {
+    setVolume(Number(floatingOrb.volume.value) / 100);
+  });
+
+  audio.addEventListener('loadedmetadata', updateProgress);
+  audio.addEventListener('timeupdate', updateProgress);
+  audio.addEventListener('play', () => setPlayingUI(true));
+  audio.addEventListener('pause', () => setPlayingUI(false));
+  audio.addEventListener('ended', () => setPlayingUI(false));
+  audio.addEventListener('error', () => {
+    setPlayingUI(false);
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') {
+      musicState.wasPlayingBeforeHide = musicState.isPlaying;
+      syncState();
+      return;
+    }
+
+    const latestState = loadMusicState();
+    const projectedTime = getProjectedTime(latestState, audio.duration);
+    if (latestState.currentTrackIndex !== musicState.currentTrackIndex) {
+      applyTrack(latestState.currentTrackIndex, { autoplay: false, resumeTime: projectedTime, preservePlayingState: true });
+    } else if (Math.abs((audio.currentTime || 0) - projectedTime) > 0.6) {
+      try { audio.currentTime = projectedTime; } catch {}
+    }
+    setVolume(latestState.volume, false);
+    if (latestState.isPlaying && audio.paused) playCurrent();
+    else updateProgress();
+  });
+
+  window.addEventListener('storage', (event) => {
+    if (event.key !== MUSIC_STORAGE_KEY) return;
+    const latestState = loadMusicState();
+    const projectedTime = getProjectedTime(latestState, audio.duration);
+    if (latestState.currentTrackIndex !== musicState.currentTrackIndex) {
+      applyTrack(latestState.currentTrackIndex, { autoplay: false, resumeTime: projectedTime, preservePlayingState: true });
+    }
+    setVolume(latestState.volume, false);
+  });
+
+  setVolume(musicState.volume, false);
+  applyTrack(musicState.currentTrackIndex, { autoplay: false, resumeTime: getProjectedTime(savedState), preservePlayingState: true });
+  if (savedState.isPlaying && !musicState.hydratedFromStorage) {
+    musicState.hydratedFromStorage = true;
+    playCurrent();
+  }
   updateTrackInfo();
   updatePlayLabel();
-}
+  updateProgress();
+})();

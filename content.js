@@ -68,6 +68,73 @@
     ]
   };
 
+  const LOCALIZED_DEFAULT_CONTENT = {
+    ja: {
+      about: {
+        avatar: '',
+        title: '私は Asa。アニメもコードも好きな、少し人見知りな i 人です。',
+        intro: '一言で言えば、アニメが好きで、青が好きで、夜景が好きで、一人で静かにコードを書くのが好きな人です。にぎやかに自分を説明するより、好きなものを少しずつページに入れていく方が私らしいと思っています。このサイトにある空気感も、実はかなり私そのものです。ゆっくりで静かだけど、細部ではちゃんと光っていたい。',
+        quote: '「うまく大きな声では話せないから、ページに少しずつ代わりに話してもらえばいい。」',
+        tags: ['Anime', 'Coding', 'Blue Night', 'Train Scene', 'Introvert'],
+        sideTitle: '好きなものリスト',
+        sideIntro: '夕方の電車、放課後の歩道橋、夜に青くなる空、街灯がつく瞬間、イヤホンから流れる OP、そして静かそうに見えて感情をたくさん抱えているキャラ。そんなものにすぐ心を持っていかれます。',
+        stats: [
+          { label: '好きな色', value: '青。夜空に近いほど好き' },
+          { label: '普段の状態', value: '人見知りの i 人。仲良くなると少し話せる' },
+          { label: '弱い要素', value: '電車、夜景、イヤホン、風、OP' },
+          { label: 'ページで大事にすること', value: '空気感、テンポ、“カットっぽさ”' }
+        ]
+      },
+      contact: {
+        cardTitle: 'Asa に連絡する',
+        intro: 'アニメ、コード、青い夜景が好きな人も、たまたまここを通りかかった人も、ゆっくり声をかけてください。にぎやかなやり取りは少し苦手ですが、好きな作品やページづくり、コードの話ならちゃんと返事をしたいと思っています。',
+        email: 'hello@example.com',
+        social: 'GitHub / X / Bilibili / 小红书',
+        cooperation: '個人サイト、フロントエンドページ、アニメ風ムードデザイン',
+        statusTitle: '今のサイトの状態',
+        statusText: 'このサイトはいま複数ページ構成になっていて、それぞれが私の小さな設定分岐みたいなものです。情報を置くだけの場所ではなく、「何が好きか、何を考えているか、どう表現したいか」を少しずつ整理していくための静かな場所です。',
+        statusTags: ['Asa', 'Anime Mood', 'Blue Theme', 'Frontend', 'Introvert'],
+        roadmapTitle: 'これからゆっくり足したいもの',
+        roadmapText: 'これからは、追っている作品の好みをもっと詳しくまとめたり、本当の作品詳細を増やしたり、文章をもう少し書きためたり、静かなメッセージコーナーも作れたらいいなと思っています。',
+        roadmapStats: [
+          { label: '先に補完したいもの', value: 'タイムライン / ギャラリー / メッセージページ' },
+          { label: '内容の方向', value: '作品 / アニメ感想 / コード記録' },
+          { label: 'ページの空気感', value: '青、夜景、電車、静かなアニメ感' },
+          { label: '今後の公開先', value: 'GitHub Pages / Vercel / Netlify' }
+        ],
+        noteTitle: 'もっと私を知りたいなら',
+        noteText: 'まずは記事と作品ページから見てみてください。そこには「自己紹介」よりもずっと私らしいものがあります。私は最初から全部を言い切るより、気持ちをページと文章の中に少しずつ隠していく方が得意だからです。',
+        noteSteps: ['まずはキャラ設定へ', '次に作品と記事をのぞく', '話したくなったら、そのあとでゆっくり']
+      },
+      articles: [
+        {
+          id: 'article-1',
+          category: 'アニメ感想 / デザイン随筆',
+          date: '2026.04',
+          title: 'どうして私は青い黄昏のアニメカットをページに持ち込みたくなるのか',
+          summary: 'ページの発想がどこから来るのか考えると、結局いつもアニメの黄昏や電車のカットに戻ってきます。',
+          body: `## 1. まず機能より先に、画面が浮かぶ\nページを作ろうとするとき、私の頭に最初に出てくるのはレイアウトではなく、だいたい一枚の画面です。駅に入ってくる電車の風かもしれないし、青い夕方に灯る最初の街灯かもしれません。私にとっては、機能説明より先にアニメのカットみたいな感情が立ち上がります。\n\n## 2. 青はずっと特別な色\n私は本当に青が好きです。明るくて跳ねる青よりも、夜空や空気に近くて、少し静かな青が好きです。それを見ると、放課後の道や、イヤホンの中の BGM や、「今日はもう終わりかけているのに、気持ちだけまだ終わっていない」ような時間を思い出します。\n\n## 3. ページにも少しアニメっぽさがほしい\n私は、ただ情報をまっすぐ並べるだけのページがあまり得意ではありません。まず空気を見せて、それから内容を置いて、最後に細部をゆっくり開いていく。そんなふうに、小さなカードひとつでも絵コンテの一コマみたいに記憶に残ってほしいと思っています。\n\n## 4. たぶんこれも、自分の表現なんだと思う\n私はもともとあまり外向的ではないので、話したい気持ちの多くがページの中に流れ込みます。青、夜景、列車、風、静かな光。そういうものは、結局どれも少しずつ私自身に似ています。`
+        },
+        {
+          id: 'article-2',
+          category: 'フロントエンド記録',
+          date: '2026.03',
+          title: 'どうして私はページをアニメの絵コンテみたいに書きたくなるのか',
+          summary: 'ただ情報を並べるのではなく、カメラワークがあるみたいにページをゆっくり開いていくのが好きです。',
+          body: `## 1. まず「この一幕を誰に見せるか」を考える\nこれはかなりアニメの影響だと思います。ページを作るとき、私は自然に「最初に何を見せるべきだろう」と考えます。タイトルなのか、光なのか、それとも感情を落ち着かせる余白なのか。そういう発想は、自分の中ではかなりカット割りに近いです。\n\n## 2. 動きは見せ場ではなく、呼吸\n私の好きな動きは、たいてい静かです。大きくて派手な変化よりも、少し軽くて、少し柔らかくて、空気が動くみたいなものを好みます。そうするとページは「頑張って見せるもの」ではなく、「感情のある画面」になります。\n\n## 3. アニメっぽさとフロントエンドは両立できる\nアニメ感は見た目、フロントエンドは実装、と分けて考えられがちですが、私の中では最初からつながっています。CSS で空気感を作れるし、インタラクションでテンポを書けるし、ページそのものをやさしい OP みたいに見せることもできます。\n\n## 4. それが、私がフロントエンドを好きな理由\nフロントエンドは、ただ機能を書く作業ではありません。好きな光や色、カメラみたいな見せ方、感情の流れまで、少しずつ混ぜ込めるところが好きです。ページをひとつ作り終えるたびに、自分だけの絵コンテを一枚描き終えたみたいな気持ちになります。`
+        },
+        {
+          id: 'article-3',
+          category: '独り言 / 制作記録',
+          date: '2026.02',
+          title: '人見知りの i 人が、それでも真剣に個人サイトを作る理由',
+          summary: '直接うまく話せないからこそ、ページに代わりに語ってほしいと思っているのかもしれません。',
+          body: `## 1. 実は自己紹介があまり得意じゃない\n急にきちんと「こんにちは、私は誰で、何が好きです」と言おうとすると、たぶん私は少し止まってしまいます。考えがないわけではなくて、ただ昔からスロースターターで、一気に自分を開くのがあまり得意ではありません。\n\n## 2. でも、ページなら言えないことを少し言ってくれる\n好きな色や、好きな画面や、好きな表現をページの中に置いていくと、それはだんだん「すごく自分っぽいもの」になっていきます。たくさん話さなくても、そういう細部から性格はちゃんと伝わる気がしています。\n\n## 3. だから私にとって個人サイトは履歴書ではなく、表現\n情報だけを並べた表みたいなものには、あまりしたくありません。静かで、青くて、少しアニメっぽくて、少しだけ人見知りらしい、そんな自分の小さな場所にしたいと思っています。\n\n## 4. ここで Asa の空気を少しでも覚えてもらえたら十分\n強くなくてもいいし、にぎやかでなくてもいい。ただ見終わったあとに「この人は青が好きで、アニメが好きで、ちゃんと作っていて、少しかわいいかもしれない」と思ってもらえたら、それだけでこのページを作った意味があると思えます。`
+        }
+      ]
+    }
+  };
+
   const UI_TEXT = {
     'zh-CN': {
       readMore: '继续往下看',
@@ -76,16 +143,23 @@
       nextArticle: '下一篇',
       emptyArticleTitle: '这里还没有文章哦',
       emptyArticleDesc: '先打开 editor.html，就可以写下 Asa 的第一篇小记录啦。',
+      emptyArticleMetaLabel: '内容管理',
+      emptyArticleMetaStatus: '等待新增',
       openEditor: '打开内容管理页',
       contentEmpty: '正文还没补上',
       contentEmptyDesc: '打开 editor.html 后，就可以开始写新的内容啦。',
       articleDetailBadge: 'Article Detail',
       articleDetailSuffix: '文章详情',
+      articleDetailEmptyHint: '先去新增内容',
+      articleDetailBackHint: '先回到文章页看看吧。',
+      articleDetailEditorHint: '直接去新增和编辑内容。',
+      articleDetailListHint: '回到文章页继续看其他内容。',
       emailLabel: '邮箱',
       socialLabel: '社交平台',
       cooperationLabel: '合作方向',
       sendMail: '发送邮件',
-      viewWorks: '看看作品'
+      viewWorks: '看看作品',
+      profileAvatarAlt: 'Asa 的头像'
     },
     ja: {
       readMore: '全文を読む',
@@ -94,16 +168,23 @@
       nextArticle: '次の記事',
       emptyArticleTitle: 'まだ記事がありません',
       emptyArticleDesc: 'editor.html を開いて、最初の記事を追加してください。',
+      emptyArticleMetaLabel: 'コンテンツ管理',
+      emptyArticleMetaStatus: '追加待ち',
       openEditor: '管理ページを開く',
       contentEmpty: '内容がありません',
       contentEmptyDesc: 'editor.html を開けば、最初の記事を書き始められます。',
-      articleDetailBadge: 'Article Detail',
+      articleDetailBadge: '記事詳細',
       articleDetailSuffix: '記事詳細',
+      articleDetailEmptyHint: 'まずは内容を追加しましょう',
+      articleDetailBackHint: 'まずは記事一覧に戻ってみましょう。',
+      articleDetailEditorHint: 'そのまま追加や編集に進めます。',
+      articleDetailListHint: '記事一覧に戻って他の内容も見てみてください。',
       emailLabel: 'メール',
       socialLabel: 'SNS',
       cooperationLabel: '対応内容',
       sendMail: 'メール送信',
-      viewWorks: '作品を見る'
+      viewWorks: '作品を見る',
+      profileAvatarAlt: 'Asa のアバター'
     },
     en: {
       readMore: 'Read more',
@@ -112,21 +193,58 @@
       nextArticle: 'Next article',
       emptyArticleTitle: 'No articles yet',
       emptyArticleDesc: 'Open editor.html to add your first article.',
+      emptyArticleMetaLabel: 'Content manager',
+      emptyArticleMetaStatus: 'Waiting for new content',
       openEditor: 'Open editor',
       contentEmpty: 'No content yet',
       contentEmptyDesc: 'Open editor.html and start writing your first article.',
       articleDetailBadge: 'Article Detail',
       articleDetailSuffix: 'Article Detail',
+      articleDetailEmptyHint: 'Add content first',
+      articleDetailBackHint: 'Go back to the article list first.',
+      articleDetailEditorHint: 'Create or edit content directly here.',
+      articleDetailListHint: 'Go back to the article list and keep reading.',
       emailLabel: 'Email',
       socialLabel: 'Social',
       cooperationLabel: 'Collaboration',
       sendMail: 'Send email',
-      viewWorks: 'View works'
+      viewWorks: 'View works',
+      profileAvatarAlt: 'Asa avatar'
     }
   };
 
   const getCurrentLang = () => window.__currentLang || 'zh-CN';
   const getUIText = () => UI_TEXT[getCurrentLang()] || UI_TEXT['zh-CN'];
+  const getLocalizedDefaultContent = () => {
+    const lang = getCurrentLang();
+    const localized = LOCALIZED_DEFAULT_CONTENT[lang];
+    if (!localized) return clone(DEFAULT_CONTENT);
+
+    const base = clone(DEFAULT_CONTENT);
+
+    if (localized.about && typeof localized.about === 'object') {
+      base.about = {
+        ...base.about,
+        ...clone(localized.about),
+        stats: Array.isArray(localized.about.stats) ? clone(localized.about.stats) : base.about.stats,
+        tags: Array.isArray(localized.about.tags) ? clone(localized.about.tags) : base.about.tags
+      };
+    }
+
+    if (localized.contact && typeof localized.contact === 'object') {
+      base.contact = {
+        ...base.contact,
+        ...clone(localized.contact),
+        roadmapStats: Array.isArray(localized.contact.roadmapStats) ? clone(localized.contact.roadmapStats) : base.contact.roadmapStats,
+        statusTags: Array.isArray(localized.contact.statusTags) ? clone(localized.contact.statusTags) : base.contact.statusTags,
+        noteSteps: Array.isArray(localized.contact.noteSteps) ? clone(localized.contact.noteSteps) : base.contact.noteSteps
+      };
+    }
+
+    if (Array.isArray(localized.articles)) base.articles = clone(localized.articles);
+
+    return base;
+  };
 
   const clone = (value) => JSON.parse(JSON.stringify(value));
 
@@ -159,7 +277,7 @@
   };
 
   const normalizeContent = (value) => {
-    const base = clone(DEFAULT_CONTENT);
+    const base = getLocalizedDefaultContent();
     if (!value || typeof value !== 'object') return base;
 
     if (value.about && typeof value.about === 'object') {
@@ -192,7 +310,7 @@
       const raw = localStorage.getItem(CONTENT_STORAGE_KEY);
       return normalizeContent(raw ? JSON.parse(raw) : null);
     } catch {
-      return clone(DEFAULT_CONTENT);
+      return getLocalizedDefaultContent();
     }
   };
 
@@ -277,7 +395,7 @@
     if (!siteContent.articles.length) {
       container.innerHTML = `
         <article class="article-card reveal show">
-          <div class="article-meta"><span>内容管理</span><span>等待新增</span></div>
+          <div class="article-meta"><span>${escapeHtml(ui.emptyArticleMetaLabel)}</span><span>${escapeHtml(ui.emptyArticleMetaStatus)}</span></div>
           <h3>${escapeHtml(ui.emptyArticleTitle)}</h3>
           <p>${escapeHtml(ui.emptyArticleDesc)}</p>
           <div class="article-actions"><a class="mini-link" href="./editor.html">${escapeHtml(ui.openEditor)}</a></div>
@@ -305,7 +423,7 @@
 
     const avatar = siteContent.about?.avatar?.trim();
     if (avatar) {
-      mount.innerHTML = `<img class="profile-avatar-image" src="${escapeHtml(avatar)}" alt="Asa 的头像" />`;
+      mount.innerHTML = `<img class="profile-avatar-image" src="${escapeHtml(avatar)}" alt="${escapeHtml(getUIText().profileAvatarAlt)}" />`;
       return;
     }
 
@@ -397,9 +515,9 @@
     const ui = getUIText();
 
     if (!siteContent.articles.length) {
-      hero.innerHTML = `<span class="section-badge">${escapeHtml(ui.articleDetailBadge)}</span><h1>${escapeHtml(ui.emptyArticleTitle)}<span>先去新增内容</span></h1><p>${escapeHtml(ui.emptyArticleDesc)}</p>`;
+      hero.innerHTML = `<span class="section-badge">${escapeHtml(ui.articleDetailBadge)}</span><h1>${escapeHtml(ui.emptyArticleTitle)}<span>${escapeHtml(ui.articleDetailEmptyHint)}</span></h1><p>${escapeHtml(ui.emptyArticleDesc)}</p>`;
       content.innerHTML = `<article class="detail-body-card reveal show"><h3>${escapeHtml(ui.contentEmpty)}</h3><p>${escapeHtml(ui.contentEmptyDesc)}</p></article>`;
-      nav.innerHTML = `<a class="detail-nav-card" href="./articles.html"><h3>${escapeHtml(ui.backToArticles)}</h3><p>先回到文章页看看吧。</p></a><a class="detail-nav-card" href="./editor.html"><h3>${escapeHtml(ui.openEditor)}</h3><p>直接去新增和编辑内容。</p></a>`;
+      nav.innerHTML = `<a class="detail-nav-card" href="./articles.html"><h3>${escapeHtml(ui.backToArticles)}</h3><p>${escapeHtml(ui.articleDetailBackHint)}</p></a><a class="detail-nav-card" href="./editor.html"><h3>${escapeHtml(ui.openEditor)}</h3><p>${escapeHtml(ui.articleDetailEditorHint)}</p></a>`;
       showRevealItems(document);
       attachGlowEffect(content);
       attachGlowEffect(nav);
@@ -432,7 +550,7 @@
     if (previous) {
       navCards.push(`<a class="detail-nav-card" href="./article-detail.html?id=${encodeURIComponent(previous.id)}"><h3>${escapeHtml(ui.previousArticle)}</h3><p>${escapeHtml(previous.title)}</p></a>`);
     }
-    navCards.push(`<a class="detail-nav-card" href="./articles.html"><h3>${escapeHtml(ui.backToArticles)}</h3><p>回到文章页继续看其他内容。</p></a>`);
+    navCards.push(`<a class="detail-nav-card" href="./articles.html"><h3>${escapeHtml(ui.backToArticles)}</h3><p>${escapeHtml(ui.articleDetailListHint)}</p></a>`);
     if (next) {
       navCards.push(`<a class="detail-nav-card" href="./article-detail.html?id=${encodeURIComponent(next.id)}"><h3>${escapeHtml(ui.nextArticle)}</h3><p>${escapeHtml(next.title)}</p></a>`);
     }

@@ -31,9 +31,9 @@
   <main>
     <section class="page-hero reveal">
       <div class="page-intro">
-        <span class="section-badge">Opening theme</span>
-        <h1>我的 BGM 页面<span>和一点片头曲脑补</span></h1>
-        <p>我看番的时候总会特别记片头和片尾，所以写页面的时候，也很想给自己的小站留一段属于 Asa 的 BGM 氛围。</p>
+        <span class="section-badge" data-i18n="music.badge">Opening theme</span>
+        <h1 data-i18n-html="music.title">我的 BGM 页面<span>和一点片头曲脑补</span></h1>
+        <p data-i18n="music.desc">我看番的时候总会特别记片头和片尾，所以写页面的时候，也很想给自己的小站留一段属于 Asa 的 BGM 氛围。</p>
       </div>
     </section>
 
@@ -46,8 +46,6 @@
           </div>
           <div class="track-list">
             <button class="track-chip active" data-track="0" type="button"></button>
-            <button class="track-chip" data-track="1" type="button"></button>
-            <button class="track-chip" data-track="2" type="button"></button>
           </div>
           <div class="player-actions">
             <button class="button primary small" id="play-toggle" type="button">播放 BGM</button>
@@ -56,16 +54,16 @@
           <div class="volume-wrap"><label for="volume">音量</label><input id="volume" type="range" min="0" max="100" value="58" /></div>
           <div class="progress"><span class="progress-fill" id="progress-fill"></span></div>
           <div class="player-time"><span id="current-time">00:00</span><span id="total-time">00:10</span></div>
-          <p class="player-note">这里的旋律会自己循环生成，比较像我脑内反复播放的片头曲片段。</p>
+          <p class="player-note" data-i18n="music.note">这里的旋律会自己循环生成，比较像我脑内反复播放的片头曲片段。</p>
         </article>
 
         <article class="music-side reveal">
-          <h3>我喜欢一边听一边发呆</h3>
-          <p>不管是写代码、改页面，还是单纯放空，我都很需要一段能把情绪慢慢托起来的 BGM。最好是那种一响起来，脑子里就自动出现夜空、电车和蓝色灯光的旋律。</p>
+          <h3 data-i18n="music.sideTitle">我喜欢一边听一边发呆</h3>
+          <p data-i18n="music.sideDesc">不管是写代码、改页面，还是单纯放空，我都很需要一段能把情绪慢慢托起来的 BGM。最好是那种一响起来，脑子里就自动出现夜空、电车和蓝色灯光的旋律。</p>
           <div class="lyric-box">
-            <div class="lyric-line">“我总觉得，傍晚的风和片头曲前奏是同一种东西。”</div>
-            <div class="lyric-line">“耳机一戴上，现实的声音就会退远一点，我自己的世界也会亮起来一点。”</div>
-            <div class="lyric-line">“如果一个页面也有 BGM，那它大概就更像一集属于我的番外了。”</div>
+            <div class="lyric-line" data-i18n="music.lyric1">“我总觉得，傍晚的风和片头曲前奏是同一种东西。”</div>
+            <div class="lyric-line" data-i18n="music.lyric2">“耳机一戴上，现实的声音就会退远一点，我自己的世界也会亮起来一点。”</div>
+            <div class="lyric-line" data-i18n="music.lyric3">“如果一个页面也有 BGM，那它大概就更像一集属于我的番外了。”</div>
           </div>
         </article>
       </div>
