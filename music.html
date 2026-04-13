@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>音乐播放器</title>
+  <meta name="description" content="Asa 的音乐播放器页面。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body data-title-key="nav.music">
+  <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
+  <div class="sakura-layer" aria-hidden="true"></div>
+  <div class="star-layer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="./index.html"><div class="brand-mark">A</div><div class="brand-text"><strong data-i18n="brand.name">Asa</strong><span data-i18n="brand.tagline">爱看番也爱敲代码的蓝色系社恐 i 人</span></div></a>
+      <div class="lang-switcher"><button class="lang-btn active" type="button" data-lang="zh-CN">简体</button><button class="lang-btn" type="button" data-lang="ja">日本語</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
+      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links">
+        <a href="./index.html" data-i18n="nav.home">首页</a>
+        <a href="./profile.html" data-i18n="nav.profile">角色档案</a>
+        <a href="./about.html" data-i18n="nav.about">关于我</a>
+        <a href="./works.html" data-i18n="nav.works">作品</a>
+        <a class="active" href="./music.html" data-i18n="nav.music">音乐</a>
+        <a href="./articles.html" data-i18n="nav.articles">文章</a>
+        <a href="./contact.html" data-i18n="nav.contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="page-intro">
+        <span class="section-badge">Opening theme</span>
+        <h1>我的 BGM 页面<span>和一点片头曲脑补</span></h1>
+        <p>我看番的时候总会特别记片头和片尾，所以写页面的时候，也很想给自己的小站留一段属于 Asa 的 BGM 氛围。</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="music-grid">
+        <article class="music-player reveal" id="music-player-card">
+          <div class="player-head">
+            <div class="disc-wrap"><div class="disc-glow"></div><div class="disc"></div></div>
+            <div class="player-meta"><strong id="track-title"></strong><span id="track-subtitle"></span></div>
+          </div>
+          <div class="track-list">
+            <button class="track-chip active" data-track="0" type="button"></button>
+            <button class="track-chip" data-track="1" type="button"></button>
+            <button class="track-chip" data-track="2" type="button"></button>
+          </div>
+          <div class="player-actions">
+            <button class="button primary small" id="play-toggle" type="button">播放 BGM</button>
+            <button class="button secondary small" id="restart-track" type="button">重新开始</button>
+          </div>
+          <div class="volume-wrap"><label for="volume">音量</label><input id="volume" type="range" min="0" max="100" value="58" /></div>
+          <div class="progress"><span class="progress-fill" id="progress-fill"></span></div>
+          <div class="player-time"><span id="current-time">00:00</span><span id="total-time">00:10</span></div>
+          <p class="player-note">这里的旋律会自己循环生成，比较像我脑内反复播放的片头曲片段。</p>
+        </article>
+
+        <article class="music-side reveal">
+          <h3>我喜欢一边听一边发呆</h3>
+          <p>不管是写代码、改页面，还是单纯放空，我都很需要一段能把情绪慢慢托起来的 BGM。最好是那种一响起来，脑子里就自动出现夜空、电车和蓝色灯光的旋律。</p>
+          <div class="lyric-box">
+            <div class="lyric-line">“我总觉得，傍晚的风和片头曲前奏是同一种东西。”</div>
+            <div class="lyric-line">“耳机一戴上，现实的声音就会退远一点，我自己的世界也会亮起来一点。”</div>
+            <div class="lyric-line">“如果一个页面也有 BGM，那它大概就更像一集属于我的番外了。”</div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

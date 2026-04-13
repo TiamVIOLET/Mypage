@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文章列表</title>
+  <meta name="description" content="文章列表页面。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body data-title-key="nav.articles">
+  <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
+  <div class="sakura-layer" aria-hidden="true"></div>
+  <div class="star-layer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="./index.html"><div class="brand-mark">HK</div><div class="brand-text"><strong data-i18n="brand.name">Hoshino Kaito</strong><span data-i18n="brand.tagline">会发光的二次元个人小宇宙</span></div></a>
+      <div class="lang-switcher"><button class="lang-btn active" type="button" data-lang="zh-CN">简体</button><button class="lang-btn" type="button" data-lang="ja">日本語</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
+      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links">
+        <a href="./index.html" data-i18n="nav.home">首页</a>
+        <a href="./profile.html" data-i18n="nav.profile">角色档案</a>
+        <a href="./about.html" data-i18n="nav.about">关于我</a>
+        <a href="./works.html" data-i18n="nav.works">作品</a>
+        <a href="./music.html" data-i18n="nav.music">音乐</a>
+        <a class="active" href="./articles.html" data-i18n="nav.articles">文章</a>
+        <a href="./contact.html" data-i18n="nav.contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="page-intro">
+        <span class="section-badge">Articles</span>
+        <h1>文章小手账<span>与灵感记录</span></h1>
+        <p>这里会收纳设计随笔、动效笔记和创作碎碎念，现在已经支持本地新增和修改啦。</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="articles-grid" id="articles-list"></div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+  <script src="./content.js"></script>
+</body>
+</html>

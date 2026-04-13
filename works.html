@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>作品展示</title>
+  <meta name="description" content="Asa 的作品展示页面。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body data-title-key="nav.works">
+  <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
+  <div class="sakura-layer" aria-hidden="true"></div>
+  <div class="star-layer" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="./index.html"><div class="brand-mark">A</div><div class="brand-text"><strong data-i18n="brand.name">Asa</strong><span data-i18n="brand.tagline">爱看番也爱敲代码的蓝色系社恐 i 人</span></div></a>
+      <div class="lang-switcher"><button class="lang-btn active" type="button" data-lang="zh-CN">简体</button><button class="lang-btn" type="button" data-lang="ja">日本語</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
+      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links">
+        <a href="./index.html" data-i18n="nav.home">首页</a>
+        <a href="./profile.html" data-i18n="nav.profile">角色档案</a>
+        <a href="./about.html" data-i18n="nav.about">关于我</a>
+        <a class="active" href="./works.html" data-i18n="nav.works">作品</a>
+        <a href="./music.html" data-i18n="nav.music">音乐</a>
+        <a href="./articles.html" data-i18n="nav.articles">文章</a>
+        <a href="./contact.html" data-i18n="nav.contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="page-intro">
+        <span class="section-badge">Portfolio</span>
+        <h1>我做的页面<span>和一些想留住的气氛</span></h1>
+        <p>这些作品不只是功能练习，更像是我把喜欢的番剧感、蓝色夜景和代码整理成页面之后留下来的小分镜。</p>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="works-grid">
+        <article class="work-card reveal">
+          <div class="work-cover"><div class="cover-pattern"></div><div class="cover-label">Project 01 · Twilight Platform</div></div>
+          <div class="work-meta"><span>个人站</span><span>黄昏电车</span></div>
+          <h3>我心里的黄昏站台首页</h3>
+          <p>这是我很想留下来的那种画面：晚霞还没完全退掉，列车快要进站，整个页面像番剧片头一样安静地亮着。</p>
+          <div class="work-actions"><a class="mini-link" href="./work-detail-1.html">去看详情</a><a class="mini-link" href="./articles.html">相关手记</a></div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-cover" style="background: linear-gradient(135deg, rgba(15, 33, 68, 0.96), rgba(82, 124, 193, 0.92) 56%, rgba(255, 186, 126, 0.86) 100%);"><div class="cover-pattern"></div><div class="cover-label">Project 02 · After Rain Bridge</div></div>
+          <div class="work-meta"><span>情绪专题</span><span>雨后城市</span></div>
+          <h3>雨后天桥的蓝色心事</h3>
+          <p>我很喜欢雨刚停下来的城市，所以做了这一页：有玻璃反光、路灯、潮湿空气，也有那种说不出来的安静感。</p>
+          <div class="work-actions"><a class="mini-link" href="./work-detail-2.html">项目预览</a><a class="mini-link" href="./profile.html">看我的设定</a></div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-cover" style="background: linear-gradient(135deg, rgba(18, 31, 65, 0.95), rgba(90, 133, 211, 0.9) 52%, rgba(255, 211, 162, 0.82) 100%);"><div class="cover-pattern"></div><div class="cover-label">Project 03 · Last Train Seaside</div></div>
+          <div class="work-meta"><span>故事页</span><span>海边终电</span></div>
+          <h3>海边末班列车小剧场</h3>
+          <p>这一页更像我脑内的小动画镜头：海风、晚霞、轨道和即将离站的感觉，组合起来就是我最喜欢的那种故事氛围。</p>
+          <div class="work-actions"><a class="mini-link" href="./work-detail-3.html">浏览作品</a><a class="mini-link" href="./music.html">配上片头曲</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>

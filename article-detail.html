@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文章详情</title>
+  <meta name="description" content="Asa 的文章详情页。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
+  <div class="sakura-layer" aria-hidden="true"></div>
+  <div class="star-layer" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="./index.html"><div class="brand-mark">A</div><div class="brand-text"><strong data-i18n="brand.name">Asa</strong><span data-i18n="brand.tagline">爱看番也爱敲代码的蓝色系社恐 i 人</span></div></a>
+      <div class="lang-switcher"><button class="lang-btn active" type="button" data-lang="zh-CN">简体</button><button class="lang-btn" type="button" data-lang="ja">日本語</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
+      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links">
+        <a href="./index.html" data-i18n="nav.home">首页</a>
+        <a href="./profile.html" data-i18n="nav.profile">角色档案</a>
+        <a href="./about.html" data-i18n="nav.about">关于我</a>
+        <a href="./works.html" data-i18n="nav.works">作品</a>
+        <a href="./music.html" data-i18n="nav.music">音乐</a>
+        <a class="active" href="./articles.html" data-i18n="nav.articles">文章</a>
+        <a href="./contact.html" data-i18n="nav.contact">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero reveal">
+      <div class="page-intro" id="article-detail-hero"></div>
+    </section>
+
+    <section class="section reveal">
+      <div class="detail-content-grid" id="article-detail-content"></div>
+      <div class="detail-nav-grid" id="article-detail-nav"></div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+  <script src="./content.js"></script>
+</body>
+</html>

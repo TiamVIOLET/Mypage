@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>私密内容管理</title>
+  <meta name="description" content="私密内容管理页。" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="editor-page">
+  <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
+  <div class="sakura-layer" aria-hidden="true"></div>
+  <div class="star-layer" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="./index.html"><div class="brand-mark">A</div><div class="brand-text"><strong>Asa</strong><span>你的私密内容管理入口</span></div></a>
+      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links">
+        <a href="./index.html">首页</a>
+        <a href="./articles.html">文章</a>
+        <a href="./about.html">关于我</a>
+        <a href="./contact.html">联系</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="editor-shell">
+    <section class="page-hero reveal show">
+      <div class="page-intro">
+        <span class="section-badge">Private editor</span>
+        <h1>私密内容管理<span>新增与修改都在这里</span></h1>
+        <p>这个页面不会出现在主导航里，适合你自己写文章、改“关于我”和“联系”内容。当前版本是纯前端本地管理，内容保存在当前浏览器里。</p>
+      </div>
+    </section>
+
+    <section class="section reveal show">
+      <article class="card reveal show" id="editor-auth"></article>
+
+      <div id="editor-app" class="editor-stack is-hidden">
+        <article class="card reveal show">
+          <h3>使用说明</h3>
+          <p>这里是你的本地私密编辑页。文章正文支持用 <code>## 小标题</code> 来拆分段落，保存后刷新前台页面即可看到更新。</p>
+          <p id="editor-feedback" class="helper-text">保存后刷新前台页面，就能看到最新内容。</p>
+          <div class="editor-toolbar">
+            <a class="mini-link" href="./articles.html" target="_blank" rel="noreferrer">查看文章页</a>
+            <a class="mini-link" href="./about.html" target="_blank" rel="noreferrer">查看关于我</a>
+            <a class="mini-link" href="./contact.html" target="_blank" rel="noreferrer">查看联系页</a>
+            <button class="button secondary small" type="button" id="editor-lock">重新锁定</button>
+          </div>
+        </article>
+
+        <article class="card reveal show">
+          <div class="editor-toolbar editor-toolbar-split">
+            <div>
+              <h3>文章管理</h3>
+              <p class="helper-text">新增文章后，可以直接修改标题、摘要和正文。正文支持多个 <code>## 小标题</code>。</p>
+            </div>
+            <div class="editor-toolbar compact-toolbar">
+              <select id="article-select"></select>
+              <button class="button secondary small" type="button" id="article-new">新增文章</button>
+            </div>
+          </div>
+
+          <div class="field-grid two">
+            <div class="field-group">
+              <label for="article-title">文章标题</label>
+              <input id="article-title" type="text" placeholder="输入文章标题" />
+            </div>
+            <div class="field-group">
+              <label for="article-category">文章分类</label>
+              <input id="article-category" type="text" placeholder="例如：设计随笔" />
+            </div>
+          </div>
+
+          <div class="field-grid two">
+            <div class="field-group">
+              <label for="article-date">显示日期</label>
+              <input id="article-date" type="text" placeholder="例如：2026.04" />
+            </div>
+            <div class="field-group">
+              <label for="article-summary">文章摘要</label>
+              <textarea id="article-summary" rows="4" placeholder="列表页会展示这段摘要"></textarea>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label for="article-body">文章正文</label>
+            <textarea id="article-body" rows="16" placeholder="示例：&#10;## 一、先写一个小标题&#10;这里写正文。&#10;&#10;## 二、继续补充内容&#10;这里写下一段。"></textarea>
+            <p class="helper-text">提示：每个小节前面写 <code>## 标题</code>，详情页会自动拆成卡片。</p>
+          </div>
+
+          <div class="editor-toolbar">
+            <button class="button primary small" type="button" id="article-save">保存文章</button>
+          </div>
+        </article>
+
+        <article class="card reveal show">
+          <h3>关于我</h3>
+          <div class="field-grid two">
+            <div class="field-group">
+              <label for="about-avatar-url">头像地址</label>
+              <input id="about-avatar-url" type="text" placeholder="可填图片链接或 data:image..." />
+            </div>
+            <div class="field-group">
+              <label for="about-avatar-file">上传头像图片</label>
+              <input id="about-avatar-file" type="file" accept="image/*" />
+            </div>
+          </div>
+          <p class="helper-text">不填头像时，角色档案页会继续使用当前的二次元 CSS 立绘。</p>
+          <div class="field-group">
+            <label for="about-title">主标题</label>
+            <input id="about-title" type="text" placeholder="输入主标题" />
+          </div>
+          <div class="field-group">
+            <label for="about-intro">主内容</label>
+            <textarea id="about-intro" rows="7" placeholder="输入主要介绍内容"></textarea>
+          </div>
+          <div class="field-group">
+            <label for="about-quote">引用文案</label>
+            <textarea id="about-quote" rows="3" placeholder="输入一句你想强调的话"></textarea>
+          </div>
+          <div class="field-group">
+            <label for="about-tags">标签</label>
+            <input id="about-tags" type="text" placeholder="用逗号分隔，例如：Nightscape UI，Anime Mood" />
+          </div>
+          <div class="field-group">
+            <label for="about-side-title">右侧卡片标题</label>
+            <input id="about-side-title" type="text" placeholder="例如：偏好面板" />
+          </div>
+          <div class="field-group">
+            <label for="about-side-intro">右侧卡片说明</label>
+            <textarea id="about-side-intro" rows="5" placeholder="输入偏好说明"></textarea>
+          </div>
+
+          <div class="field-grid two">
+            <div class="field-group"><label for="about-stat-label-1">信息 1 标题</label><input id="about-stat-label-1" type="text" /></div>
+            <div class="field-group"><label for="about-stat-value-1">信息 1 内容</label><input id="about-stat-value-1" type="text" /></div>
+            <div class="field-group"><label for="about-stat-label-2">信息 2 标题</label><input id="about-stat-label-2" type="text" /></div>
+            <div class="field-group"><label for="about-stat-value-2">信息 2 内容</label><input id="about-stat-value-2" type="text" /></div>
+            <div class="field-group"><label for="about-stat-label-3">信息 3 标题</label><input id="about-stat-label-3" type="text" /></div>
+            <div class="field-group"><label for="about-stat-value-3">信息 3 内容</label><input id="about-stat-value-3" type="text" /></div>
+            <div class="field-group"><label for="about-stat-label-4">信息 4 标题</label><input id="about-stat-label-4" type="text" /></div>
+            <div class="field-group"><label for="about-stat-value-4">信息 4 内容</label><input id="about-stat-value-4" type="text" /></div>
+          </div>
+
+          <div class="editor-toolbar">
+            <button class="button primary small" type="button" id="about-save">保存关于我</button>
+          </div>
+        </article>
+
+        <article class="card reveal show">
+          <h3>联系页</h3>
+          <div class="field-grid two">
+            <div class="field-group"><label for="contact-card-title">联系卡标题</label><input id="contact-card-title" type="text" /></div>
+            <div class="field-group"><label for="contact-email">邮箱</label><input id="contact-email" type="text" placeholder="例如：you@example.com" /></div>
+          </div>
+          <div class="field-group">
+            <label for="contact-intro">联系卡说明</label>
+            <textarea id="contact-intro" rows="5"></textarea>
+          </div>
+          <div class="field-grid two">
+            <div class="field-group"><label for="contact-social">社交平台</label><input id="contact-social" type="text" /></div>
+            <div class="field-group"><label for="contact-cooperation">合作方向</label><input id="contact-cooperation" type="text" /></div>
+          </div>
+          <div class="field-grid two">
+            <div class="field-group"><label for="contact-status-title">站点状态标题</label><input id="contact-status-title" type="text" /></div>
+            <div class="field-group"><label for="contact-status-tags">站点状态标签</label><input id="contact-status-tags" type="text" placeholder="用逗号分隔" /></div>
+          </div>
+          <div class="field-group">
+            <label for="contact-status-text">站点状态说明</label>
+            <textarea id="contact-status-text" rows="5"></textarea>
+          </div>
+          <div class="field-grid two">
+            <div class="field-group"><label for="contact-roadmap-title">扩展卡片标题</label><input id="contact-roadmap-title" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-text">扩展卡片说明</label><textarea id="contact-roadmap-text" rows="4"></textarea></div>
+          </div>
+
+          <div class="field-grid two">
+            <div class="field-group"><label for="contact-roadmap-label-1">扩展 1 标题</label><input id="contact-roadmap-label-1" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-value-1">扩展 1 内容</label><input id="contact-roadmap-value-1" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-label-2">扩展 2 标题</label><input id="contact-roadmap-label-2" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-value-2">扩展 2 内容</label><input id="contact-roadmap-value-2" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-label-3">扩展 3 标题</label><input id="contact-roadmap-label-3" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-value-3">扩展 3 内容</label><input id="contact-roadmap-value-3" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-label-4">扩展 4 标题</label><input id="contact-roadmap-label-4" type="text" /></div>
+            <div class="field-group"><label for="contact-roadmap-value-4">扩展 4 内容</label><input id="contact-roadmap-value-4" type="text" /></div>
+          </div>
+
+          <div class="field-grid two">
+            <div class="field-group"><label for="contact-note-title">说明卡片标题</label><input id="contact-note-title" type="text" /></div>
+            <div class="field-group"><label for="contact-note-steps">说明步骤</label><textarea id="contact-note-steps" rows="5" placeholder="每行一条"></textarea></div>
+          </div>
+          <div class="field-group">
+            <label for="contact-note-text">说明正文</label>
+            <textarea id="contact-note-text" rows="5"></textarea>
+          </div>
+
+          <div class="editor-toolbar">
+            <button class="button primary small" type="button" id="contact-save">保存联系页</button>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="./script.js"></script>
+  <script src="./content.js"></script>
+</body>
+</html>
