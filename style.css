@@ -1916,6 +1916,78 @@ code {
   .collar.right { right: 92px; }
 }
 
+.mascot-shell {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 41;
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+}
+
+.mascot-toggle,
+.mascot-visibility {
+  display: none;
+}
+
+.mascot-stage-wrap {
+  position: relative;
+  width: 260px;
+  height: 400px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, rgba(8, 15, 29, 0.42), rgba(8, 15, 29, 0.12));
+  border: 1px solid rgba(141, 188, 255, 0.12);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.26);
+  overflow: visible;
+}
+
+.mascot-stage-wrap::before {
+  content: "";
+  position: absolute;
+  inset: auto 18px 14px 18px;
+  height: 34px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(132, 199, 255, 0.16), rgba(132, 199, 255, 0.04) 52%, transparent 74%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.mascot-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mascot-stage #oml2d-stage {
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: 1 !important;
+}
+
+.mascot-stage #oml2d-tips {
+  position: absolute !important;
+  top: 18px !important;
+  left: -22px !important;
+  bottom: auto !important;
+  width: 190px !important;
+  max-width: 190px !important;
+  transform: none !important;
+  z-index: 8 !important;
+  pointer-events: none;
+}
+
+.mascot-visibility {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  z-index: 4;
+}
+
+.mascot-shell.is-collapsed .mascot-stage-wrap {
+  display: none;
+}
+
 @media (max-width: 520px) {
   main { padding-bottom: 28px; }
   .music-orb { right: 10px; bottom: 10px; }
@@ -1934,6 +2006,16 @@ code {
   .footer-card,
   .quick-card {
     padding: 20px;
+  }
+
+  .mascot-shell {
+    left: 10px;
+    bottom: 52px;
+  }
+
+  .mascot-stage-wrap {
+    width: 210px;
+    height: 320px;
   }
 
   .button,

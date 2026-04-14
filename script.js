@@ -179,7 +179,27 @@ const translations = {
     tracks: [
       { title: 'more than words', subtitle: '羊文学', chip: 'more than words' }
     ],
-    alerts: { webAudioUnsupported: '当前浏览器不支持 Web Audio API。', audioLoadFailed: '本地音频加载失败。请把 mp3 放到 assets/music 目录，或修改 script.js 里的歌曲路径。' }
+    alerts: { webAudioUnsupported: '当前浏览器不支持 Web Audio API。', audioLoadFailed: '本地音频加载失败。请把 mp3 放到 assets/music 目录，或修改 script.js 里的歌曲路径。' },
+    mascot: {
+      show: '显示看板娘',
+      hide: '隐藏看板娘',
+      loading: 'Asa 的看板娘正在慢慢靠近……',
+      loadFailed: '看板娘这次没有顺利出现。你之后可以把模型地址换成自己的 model.json。',
+      entrance: ['你好，欢迎来到 Asa 的蓝色小站。', '如果现实里不太敢先开口，就让她先来打个招呼吧。'],
+      idle: ['没关系，不说话也可以。', '这里本来就适合慢慢看。'],
+      musicPlay: ['片头曲感来了。', '这首很适合夜景。'],
+      musicPause: ['先安静一下也很好。', '耳机里的世界，先暂停一会儿。'],
+      pages: {
+        home: ['这里更像一本属于 Asa 的设定集。', '蓝色夜景、电车和耳机，差不多就是这里的关键词。'],
+        profile: ['这一页像角色卡，可以更快认识她。'],
+        about: ['很多不太会当面说的话，都放在这里了。'],
+        works: ['这些页面比起功能，更像她留下来的分镜。'],
+        music: ['这一页最好配着耳机一起看。'],
+        articles: ['这里会有一些认真又安静的碎碎念。'],
+        contact: ['如果你也喜欢这些东西，可以从这里慢慢找到她。'],
+        default: ['欢迎继续慢慢逛。']
+      }
+    }
   },
   ja: {
     pageTitle: 'アニメとコーディングが好きな Asa の個人サイト',
@@ -262,7 +282,27 @@ const translations = {
     tracks: [
       { title: 'more than words', subtitle: '羊文学', chip: 'more than words' }
     ],
-    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.', audioLoadFailed: 'Local audio could not be loaded. Put your mp3 files in assets/music or update the track paths in script.js.' }
+    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.', audioLoadFailed: 'Local audio could not be loaded. Put your mp3 files in assets/music or update the track paths in script.js.' },
+    mascot: {
+      show: '看板娘を表示',
+      hide: '看板娘を隠す',
+      loading: 'Asa の看板娘がゆっくり来ています……',
+      loadFailed: '今回はうまく現れませんでした。あとで自分の model.json に差し替えられます。',
+      entrance: ['こんにちは、Asa の青い小さなサイトへ。', '現実で先に話しかけにくいなら、ここで先に挨拶しておきます。'],
+      idle: ['話さなくても大丈夫です。', 'ここはゆっくり見ていく場所です。'],
+      musicPlay: ['オープニング感、来ました。', 'この曲、夜景によく合います。'],
+      musicPause: ['少し静かにするのも悪くないです。', 'イヤホンの世界も、いったんひと休み。'],
+      pages: {
+        home: ['ここは Asa の設定集みたいなページです。', '青い夜、電車、イヤホン。そのへんがこの場所のキーワードです。'],
+        profile: ['このページはキャラ設定に近いです。'],
+        about: ['言葉にしにくいことは、ここに少しずつ置いてあります。'],
+        works: ['作品というより、小さなカット集に近いかもしれません。'],
+        music: ['このページはイヤホンと一緒だとちょうどいいです。'],
+        articles: ['ここには静かなメモが増えていきます。'],
+        contact: ['好きなものが近ければ、ここからゆっくり見つけてください。'],
+        default: ['このままゆっくり見ていってください。']
+      }
+    }
   },
   en: {
     pageTitle: 'Asa — anime, code, and blue nights',
@@ -345,11 +385,32 @@ const translations = {
     tracks: [
       { title: 'more than words', subtitle: 'Hitsujibungaku', chip: 'more than words' }
     ],
-    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.', audioLoadFailed: 'Local audio could not be loaded. Put your mp3 files in assets/music or update the track paths in script.js.' }
+    alerts: { webAudioUnsupported: 'Your browser does not support the Web Audio API.', audioLoadFailed: 'Local audio could not be loaded. Put your mp3 files in assets/music or update the track paths in script.js.' },
+    mascot: {
+      show: 'Show mascot',
+      hide: 'Hide mascot',
+      loading: 'Asa’s mascot is slowly walking in…',
+      loadFailed: 'The mascot did not load this time. You can replace the model URL with your own model.json later.',
+      entrance: ['Hi, welcome to Asa’s little blue site.', 'If real-life greetings are hard, maybe this page can say hello first.'],
+      idle: ['It’s okay to stay quiet here.', 'This place works better when you take it slowly.'],
+      musicPlay: ['The opening-theme feeling is here.', 'This track fits the night mood.'],
+      musicPause: ['A quiet pause is nice too.', 'The headphone world can rest for a moment.'],
+      pages: {
+        home: ['This page feels more like Asa’s setting book.', 'Blue nights, trains, and earphones — that is most of the mood here.'],
+        profile: ['This page is the fastest way to know her character setting.'],
+        about: ['Things that are hard to say out loud are left here little by little.'],
+        works: ['These pages feel more like saved scenes than pure projects.'],
+        music: ['This page works best with earphones on.'],
+        articles: ['This is where the quieter notes keep growing.'],
+        contact: ['If you like similar things, you can find her from here slowly.'],
+        default: ['Feel free to keep looking around slowly.']
+      }
+    }
   }
 };
 
 const getByPath = (obj, path) => path.split('.').reduce((acc, key) => acc && acc[key], obj);
+const randomItem = (items) => items[Math.floor(Math.random() * items.length)];
 
 const applyTranslations = (lang) => {
   const dict = translations[lang] || translations['zh-CN'];
@@ -382,6 +443,7 @@ const applyTranslations = (lang) => {
   if (typeof window.__updateTrackInfo === 'function') window.__updateTrackInfo();
   if (typeof window.__updatePlayLabel === 'function') window.__updatePlayLabel();
   if (typeof window.__rerenderDynamicContent === 'function') window.__rerenderDynamicContent();
+  if (typeof window.__updateMascotUi === 'function') window.__updateMascotUi();
 };
 
 langButtons.forEach((btn) => {
@@ -496,6 +558,322 @@ const createFloatingMusicOrb = () => {
 const playerCard = document.getElementById('music-player-card');
 const floatingOrb = createFloatingMusicOrb();
 
+const MASCOT_STORAGE_KEY = 'mypage-mascot-visible-v1';
+const MASCOT_SCRIPT_PATH = './assets/vendor/oh-my-live2d.min.js';
+const MASCOT_MODEL_PATH = './assets/live2d/koharu/koharu.model.json';
+const MASCOT_PAGES = [
+  ['index.html', 'home'],
+  ['profile.html', 'profile'],
+  ['about.html', 'about'],
+  ['works.html', 'works'],
+  ['music.html', 'music'],
+  ['articles.html', 'articles'],
+  ['contact.html', 'contact']
+];
+
+const getMascotDict = () => getDict().mascot || translations['zh-CN'].mascot;
+const getMascotPageKey = () => {
+  const path = window.location.pathname.split('/').pop() || 'index.html';
+  const match = MASCOT_PAGES.find(([file]) => file === path);
+  return match ? match[1] : 'default';
+};
+const isMobileViewport = () => window.matchMedia('(max-width: 760px)').matches;
+const isLocalPreviewHost = () => {
+  const { protocol, hostname } = window.location;
+  if (protocol === 'file:' || !hostname) return true;
+  if (hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1') return true;
+  if (/^10\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(hostname)) return true;
+  if (/^192\.168\.\d{1,3}\.\d{1,3}$/.test(hostname)) return true;
+  if (/^172\.(1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3}$/.test(hostname)) return true;
+  return false;
+};
+const shouldForceMascotPreview = isLocalPreviewHost();
+const loadExternalScript = (src) => new Promise((resolve, reject) => {
+  const existing = document.querySelector(`script[data-src="${src}"]`);
+  if (existing) {
+    if (existing.dataset.loaded === 'true') resolve();
+    else {
+      existing.addEventListener('load', () => resolve(), { once: true });
+      existing.addEventListener('error', () => reject(new Error(`Failed to load ${src}`)), { once: true });
+    }
+    return;
+  }
+
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = true;
+  script.dataset.src = src;
+  script.addEventListener('load', () => {
+    script.dataset.loaded = 'true';
+    resolve();
+  }, { once: true });
+  script.addEventListener('error', () => reject(new Error(`Failed to load ${src}`)), { once: true });
+  document.head.appendChild(script);
+});
+
+const createMascotShell = () => {
+  const shell = document.createElement('div');
+  shell.className = 'mascot-shell is-hidden';
+  shell.innerHTML = `
+    <button class="mascot-toggle mini-link" type="button"></button>
+    <div class="mascot-stage-wrap is-hidden">
+      <div class="mascot-stage" id="mascot-stage"></div>
+      <button class="mascot-visibility mini-link" type="button"></button>
+    </div>
+  `;
+  document.body.appendChild(shell);
+  return {
+    shell,
+    toggle: shell.querySelector('.mascot-toggle'),
+    stageWrap: shell.querySelector('.mascot-stage-wrap'),
+    stage: shell.querySelector('#mascot-stage'),
+    visibility: shell.querySelector('.mascot-visibility')
+  };
+};
+
+const mascotShell = createMascotShell();
+const mascotState = {
+  instance: null,
+  loaded: false,
+  loading: false,
+  failed: false,
+  visible: (() => {
+    if (shouldForceMascotPreview) return true;
+    try {
+      const stored = localStorage.getItem(MASCOT_STORAGE_KEY);
+      return stored === null ? !isMobileViewport() : stored !== 'false';
+    } catch {
+      return !isMobileViewport();
+    }
+  })(),
+  hasWelcomed: false,
+  idleTimer: null
+};
+
+const setMascotVisibility = (visible) => {
+  mascotState.visible = visible;
+  mascotShell.shell.classList.remove('is-hidden');
+  mascotShell.stageWrap.classList.toggle('is-hidden', !visible);
+  mascotShell.shell.classList.toggle('is-collapsed', !visible);
+  try { localStorage.setItem(MASCOT_STORAGE_KEY, String(visible)); } catch {}
+  if (typeof window.__updateMascotUi === 'function') window.__updateMascotUi();
+};
+
+const showMascotMessage = (message, duration = 5000, priority = 3) => {
+  if (!mascotState.visible || !message) return;
+  if (mascotState.instance && typeof mascotState.instance.tipsMessage === 'function') {
+    mascotState.instance.tipsMessage(message, duration, priority);
+    return;
+  }
+  mascotShell.toggle.textContent = message;
+};
+
+const getMascotPageMessages = () => {
+  const dict = getMascotDict();
+  return dict.pages[getMascotPageKey()] || dict.pages.default || [];
+};
+
+const queueMascotIdleMessage = () => {
+  if (mascotState.idleTimer) window.clearTimeout(mascotState.idleTimer);
+  mascotState.idleTimer = window.setTimeout(() => {
+    const dict = getMascotDict();
+    const pool = [...getMascotPageMessages(), ...(dict.idle || [])].filter(Boolean);
+    if (pool.length) showMascotMessage(randomItem(pool), 4200, 1);
+  }, 12000);
+};
+
+const updateMascotUi = () => {
+  const dict = getMascotDict();
+  mascotShell.toggle.textContent = mascotState.visible ? dict.hide : dict.show;
+  mascotShell.toggle.setAttribute('aria-label', mascotState.visible ? dict.hide : dict.show);
+  mascotShell.visibility.textContent = dict.hide;
+  mascotShell.visibility.setAttribute('aria-label', dict.hide);
+};
+
+window.__updateMascotUi = updateMascotUi;
+updateMascotUi();
+setMascotVisibility(mascotState.visible);
+
+mascotShell.toggle.addEventListener('click', async () => {
+  if (mascotState.visible) {
+    setMascotVisibility(false);
+    return;
+  }
+  setMascotVisibility(true);
+  await ensureMascotReady();
+  const dict = getMascotDict();
+  showMascotMessage(randomItem(dict.entrance || getMascotPageMessages()), 5000, 3);
+  queueMascotIdleMessage();
+});
+
+mascotShell.visibility.addEventListener('click', () => {
+  setMascotVisibility(false);
+});
+
+const bindMascotStageEvents = () => {
+  mascotShell.stage.addEventListener('pointerenter', () => {
+    const messages = getMascotPageMessages();
+    if (messages.length) showMascotMessage(randomItem(messages), 4200, 2);
+  });
+  mascotShell.stage.addEventListener('click', () => {
+    const dict = getMascotDict();
+    const pool = [...getMascotPageMessages(), ...(dict.idle || [])].filter(Boolean);
+    if (pool.length) showMascotMessage(randomItem(pool), 4200, 3);
+    queueMascotIdleMessage();
+  });
+};
+
+let mascotStageEventsBound = false;
+const ensureMascotReady = async () => {
+  if (!mascotState.visible || (isMobileViewport() && !shouldForceMascotPreview)) return null;
+  if (mascotState.instance) return mascotState.instance;
+  if (mascotState.loading) return null;
+  mascotState.loading = true;
+
+  try {
+    if (!(window.OML2D && typeof window.OML2D.loadOml2d === 'function')) {
+      await loadExternalScript(MASCOT_SCRIPT_PATH);
+    }
+    const api = window.OML2D || window.OhMyLive2D || window.ohMyLive2d || window;
+    const loadOml2d = api.loadOml2d || window.loadOml2d;
+    if (typeof loadOml2d !== 'function') throw new Error('loadOml2d is unavailable');
+
+    const dict = getMascotDict();
+    mascotState.instance = loadOml2d({
+      parentElement: mascotShell.stage,
+      dockedPosition: 'left',
+      primaryColor: '#84c7ff',
+      mobileDisplay: false,
+      sayHello: false,
+      transitionTime: 600,
+      stageStyle: {
+        position: 'absolute',
+        left: '0',
+        right: '0',
+        bottom: '0',
+        width: '100%',
+        height: '100%',
+        zIndex: '1'
+      },
+      statusBar: { disable: true },
+      menus: { disable: true },
+      tips: {
+        messageLine: 3,
+        style: {
+          width: '74%',
+          minHeight: '84px',
+          bottom: '116px',
+          padding: '14px 16px',
+          background: 'rgba(8, 15, 29, 0.88)',
+          border: '1px solid rgba(141, 188, 255, 0.16)',
+          borderRadius: '18px',
+          color: '#f7fbff',
+          backdropFilter: 'blur(16px)',
+          boxShadow: '0 18px 38px rgba(0, 0, 0, 0.26)',
+          lineHeight: '1.7',
+          fontSize: '13px'
+        },
+        idleTips: {
+          interval: 18000,
+          duration: 4600,
+          priority: 1,
+          message: [...getMascotPageMessages(), ...(dict.idle || [])]
+        },
+        welcomeTips: {
+          duration: 5600,
+          priority: 3,
+          message: {
+            daybreak: randomItem(dict.entrance || ['Hi']),
+            morning: randomItem(dict.entrance || ['Hi']),
+            noon: randomItem(dict.entrance || ['Hi']),
+            afternoon: randomItem(getMascotPageMessages() || dict.entrance || ['Hi']),
+            dusk: randomItem(getMascotPageMessages() || dict.entrance || ['Hi']),
+            night: randomItem(getMascotPageMessages() || dict.entrance || ['Hi']),
+            lateNight: randomItem(dict.idle || dict.entrance || ['Hi']),
+            weeHours: randomItem(dict.idle || dict.entrance || ['Hi'])
+          }
+        },
+        copyTips: { message: [] }
+      },
+      models: [
+        {
+          name: 'asa-default',
+          path: MASCOT_MODEL_PATH,
+          scale: 0.092,
+          position: [0, 102],
+          mobileScale: 0.078,
+          mobilePosition: [0, 80],
+          motionPreloadStrategy: 'IDLE',
+          volume: 0
+        }
+      ]
+    });
+
+    mascotState.instance.onLoad?.((status) => {
+      if (status === 'success') {
+        mascotState.failed = false;
+        mascotState.loaded = true;
+        if (!mascotState.hasWelcomed) {
+          mascotState.hasWelcomed = true;
+          showMascotMessage(randomItem(dict.entrance || getMascotPageMessages()), 5200, 3);
+        }
+        queueMascotIdleMessage();
+      }
+      if (status === 'fail') {
+        mascotState.failed = true;
+        showMascotMessage(dict.loadFailed, 5200, 4);
+      }
+    });
+
+    if (!mascotStageEventsBound) {
+      mascotStageEventsBound = true;
+      bindMascotStageEvents();
+    }
+
+    return mascotState.instance;
+  } catch {
+    mascotState.failed = true;
+    showMascotMessage(getMascotDict().loadFailed, 5200, 4);
+    return null;
+  } finally {
+    mascotState.loading = false;
+  }
+};
+
+const scheduleMascotLoad = () => {
+  if (!mascotState.visible || (isMobileViewport() && !shouldForceMascotPreview)) return;
+  const run = () => ensureMascotReady();
+  if ('requestIdleCallback' in window) {
+    window.requestIdleCallback(run, { timeout: 2200 });
+  } else {
+    window.setTimeout(run, 1200);
+  }
+};
+
+scheduleMascotLoad();
+window.addEventListener('resize', () => {
+  const shouldHideOnMobile = isMobileViewport() && !shouldForceMascotPreview;
+  mascotShell.shell.classList.toggle('is-mobile', isMobileViewport());
+  if (shouldHideOnMobile) {
+    mascotShell.shell.classList.add('is-hidden');
+    mascotShell.stageWrap.classList.add('is-hidden');
+  } else {
+    mascotShell.shell.classList.remove('is-hidden');
+    mascotShell.stageWrap.classList.toggle('is-hidden', !mascotState.visible);
+    if (mascotState.visible) scheduleMascotLoad();
+  }
+});
+
+window.addEventListener('mypage:music-state', (event) => {
+  if (!mascotState.loaded) return;
+  const dict = getMascotDict();
+  const messages = event.detail?.isPlaying ? dict.musicPlay : dict.musicPause;
+  if (Array.isArray(messages) && messages.length) {
+    showMascotMessage(randomItem(messages), 3600, 2);
+    queueMascotIdleMessage();
+  }
+});
+
 (() => {
   const playToggle = document.getElementById('play-toggle');
   const restartTrack = document.getElementById('restart-track');
@@ -536,6 +914,12 @@ const floatingOrb = createFloatingMusicOrb();
     if (playerCard) playerCard.classList.toggle('playing', isPlaying);
     floatingOrb.container.classList.toggle('playing', isPlaying);
     updatePlayLabel();
+    window.dispatchEvent(new CustomEvent('mypage:music-state', {
+      detail: {
+        isPlaying,
+        trackIndex: musicState.currentTrackIndex
+      }
+    }));
     syncState();
   };
 
