@@ -74,7 +74,7 @@ window.addEventListener('click', (event) => {
   }
 });
 
-const glowCards = document.querySelectorAll('.card, .hero-point, .scene-card, .portrait-card, .panel-card, .work-card, .article-card, .music-player, .music-side, .footer-card, .quick-card');
+const glowCards = document.querySelectorAll('.card, .hero-point, .scene-card, .portrait-card, .panel-card, .work-card, .article-card, .music-player, .music-side, .footer-card, .quick-card, .gallery-album-card, .gallery-empty-card');
 glowCards.forEach((card) => {
   card.addEventListener('pointermove', (event) => {
     const rect = card.getBoundingClientRect();
@@ -101,7 +101,7 @@ const translations = {
     pageTitle: 'Asa 的蓝色系二次元小站',
     pageDescription: 'Asa 的个人小站：动漫、编程、蓝色夜景，还有一点慢热社恐 i 人的心情。',
     brand: { name: 'Asa', tagline: '爱看番也爱敲代码的蓝色系社恐 i 人' },
-    nav: { home: '首页', profile: '角色档案', about: '关于我', works: '作品', music: '音乐', articles: '文章', contact: '联系' },
+    nav: { home: '首页', profile: '角色档案', about: '关于我', works: '作品', music: '音乐', gallery: '图库', articles: '文章', contact: '联系' },
     common: {
       homeIntroBadge: 'Blue anime mood',
       detail: '去看详情', preview: '项目预览', browse: '浏览作品', read: '继续往下看', top: '回到顶部', playMusic: '播放音乐', viewSetting: '看看设定', enterPage: '进入页面',
@@ -124,6 +124,10 @@ const translations = {
       c4t: '音乐播放器', c4d: '写代码或者发呆的时候，我很需要这种像片头曲一样的 BGM 来陪我。',
       c5t: '文章小手账', c5d: '这里是我的做站笔记、追番联想和一些有点中二、但我很认真的记录。',
       c6t: '联系小卡片', c6d: '如果你也喜欢动漫、蓝色夜景或者代码，可以从这里慢慢找到我。',
+      galleryPreviewBadge: 'Gallery',
+      galleryPreviewTitle: '我收集的画面碎片',
+      galleryPreviewDesc: '把喜欢的图片和生成出来的画面，按系列慢慢收进这个蓝色图库里。',
+      galleryPreviewAction: '进入图库',
       ftBadge: 'Asa', ftTitle: '谢谢你路过我的蓝色小宇宙', ftDesc: '如果你能从这里感受到一点番剧感、一点夜风感，或者一点属于 Asa 的慢热心情，那它就已经完成了自己的任务。', ftInfoTitle: '我的关键词', ftInfoDesc: '动漫 / 编程 / 蓝色 / 电车 / 夜景 / 社恐 i 人 / 片头曲脑袋'
     },
     profile: {
@@ -133,9 +137,9 @@ const translations = {
       worldTitle: '我的世界观小设定', worldDesc: '如果把我的日常拍成一集偏安静的番外，大概就是放学后或忙完一天以后，戴着耳机走在蓝色晚空下面，然后回家继续追番、写代码、改页面的那种节奏。',
       w1l: '舞台', w1v: '雨后城市、电车站台、安静房间和发光屏幕', w2l: '时间', w2v: '傍晚到深夜，是我最喜欢的时段', w3l: '主色', w3v: '蓝色系，最好再带一点冷冷的光', w4l: '情绪', w4v: '安静、慢热、有点距离感，但很认真',
       statusTitle: 'Asa 今日状态', statusDesc: '这一块就像主角状态栏，能看到我最近在想什么、偏爱什么，以及脑内常驻的小情绪。',
-      s1l: '当前主线', s1v: '把喜欢的东西都慢慢写进自己的页面里', s2l: '常用技能', s2v: '前端实现 / 氛围塑造 / 一个人默默打磨细节', s3l: '隐藏加成', s3v: '看到高质量片头、蓝色夜景和电车镜头会直接心动暴击',
-      skillTitle: '技能树', skillDesc: '我的技能点大概都点在了“页面氛围感”和“把喜欢的番剧感偷偷塞进设计里”。',
-      k1d: '我很喜欢把页面写得干净又细腻，像把一张静态画面慢慢修到刚刚好。', k2d: '我会本能地去捕捉那种日漫里常见的蓝色夜空、风、灯光和电车感。', k3d: '我偏爱轻一点、柔一点的动效，不想太吵，但希望每个细节都有呼吸感。', k4d: '比起热闹地表达，我更喜欢让页面替我慢慢说话，这也是我最习惯的自我介绍方式。'
+      s1l: '当前主线', s1v: '把喜欢的东西都慢慢写进自己的页面里', s2l: '常用技能', s2v: '后端实现 / 氛围塑造 / 一个人默默打磨细节', s3l: '隐藏加成', s3v: '看到高质量片头、蓝色夜景和电车镜头会直接心动暴击',
+      skillTitle: '技能树', skillDesc: '我的技能点主要点在后端开发、业务服务、AI 工具和分布式系统设计上。',
+      k1d: '主要技能点在后端开发，习惯从接口、数据流和系统稳定性去思考问题。', k2d: '熟悉用 Java 和 PHP 构建业务服务，关注代码结构、可维护性和落地效率。', k3d: '会用 Python 处理自动化、数据与 AI 相关能力，把想法快速变成可运行的工具。', k4d: '理解微服务与分布式系统的拆分、通信和稳定性设计，喜欢把复杂系统慢慢理清楚。'
     },
     about: {
       badge: 'About me', title: '关于我<span>与一些不太会当面说的话</span>', desc: '如果现实里的我不太擅长主动介绍自己，那这里就是最适合让我慢慢开口的地方。',
@@ -157,8 +161,20 @@ const translations = {
     articles: {
       badge: 'Articles', title: '我的文章小手账<span>和一些认真碎碎念</span>', desc: '这里会放我关于动漫、页面、代码和情绪的小记录。很多话我现实里不太会说，但我会写下来。',
       c1m1: '追番感想 / 设计随笔', c1t: '为什么我做页面时，总会忍不住想起日漫里的蓝色黄昏', c1d: '对我来说，很多页面的灵感其实不是来自“网页设计趋势”，而是来自动漫里那些黄昏、电车和安静夜空的镜头。',
-      c2m1: '前端记录', c2t: '我为什么会喜欢把前端页面写得像一张动漫分镜', c2d: '比起单纯把内容堆出来，我更喜欢让页面像有镜头语言一样慢慢展开。',
+      c2m1: '后端记录', c2t: '我为什么会喜欢把后端页面写得像一张动漫分镜', c2d: '比起单纯把内容堆出来，我更喜欢让页面像有镜头语言一样慢慢展开。',
       c3m1: '碎碎念 / 创作记录', c3t: '一个社恐 i 人，到底为什么还要认真做个人主页', c3d: '也许正因为我不太擅长当面表达，所以才更想认真做一个能替我说话的页面。'
+    },
+    gallery: {
+      pageTitle: '图库',
+      badge: 'Gallery',
+      title: '图库<span>和我收集的画面碎片</span>',
+      desc: '这里会放我收集的图片、生成的图片，以及那些很像蓝色番剧分镜的视觉灵感。',
+      albumsBadge: 'Albums',
+      albumsTitle: '按系列慢慢浏览',
+      albumsDesc: '每个系列都像一小格视觉专题，可以从封面进入详情。'
+    },
+    galleryDetail: {
+      pageTitle: '图库详情'
     },
     contact: {
       badge: 'Contact', title: '联系我<span>和一些补充说明</span>', desc: '如果你也喜欢动漫、代码、蓝色夜景或者电车镜头，可以从这里慢慢找到我。',
@@ -173,7 +189,7 @@ const translations = {
     },
     detailArticles: {
       a1Title: '为什么我做页面时，总会忍不住想起日漫里的蓝色黄昏', a1Desc: '对我来说，很多页面的灵感其实不是来自“网页设计趋势”，而是来自动漫里那些黄昏、电车和安静夜空的镜头。',
-      a2Title: '我为什么会喜欢把前端页面写得像一张动漫分镜', a2Desc: '比起单纯把内容堆出来，我更喜欢让页面像有镜头语言一样慢慢展开。',
+      a2Title: '我为什么会喜欢把后端页面写得像一张动漫分镜', a2Desc: '比起单纯把内容堆出来，我更喜欢让页面像有镜头语言一样慢慢展开。',
       a3Title: '一个社恐 i 人，到底为什么还要认真做个人主页', a3Desc: '也许正因为我不太擅长当面表达，所以才更想认真做一个能替我说话的页面。'
     },
     tracks: [
@@ -195,6 +211,7 @@ const translations = {
         about: ['很多不太会当面说的话，都放在这里了。'],
         works: ['这些页面比起功能，更像她留下来的分镜。'],
         music: ['这一页最好配着耳机一起看。'],
+        gallery: ['这里会慢慢收集 Asa 喜欢的图片和生成画面。'],
         articles: ['这里会有一些认真又安静的碎碎念。'],
         contact: ['如果你也喜欢这些东西，可以从这里慢慢找到她。'],
         default: ['欢迎继续慢慢逛。']
@@ -205,7 +222,7 @@ const translations = {
     pageTitle: 'アニメとコーディングが好きな Asa の個人サイト',
     pageDescription: 'Asa の個人サイト。アニメ、コーディング、青い夜景、そして少し内向的な気分をまとめた場所。',
     brand: { name: 'Asa', tagline: 'アニメもコードも好きな青系の内向型' },
-    nav: { home: 'ホーム', profile: 'キャラ設定', about: '私について', works: '作品', music: '音楽', articles: '記事', contact: '連絡先' },
+    nav: { home: 'ホーム', profile: 'キャラ設定', about: '私について', works: '作品', music: '音楽', gallery: 'ギャラリー', articles: '記事', contact: '連絡先' },
     common: {
       homeIntroBadge: '青いアニメムード', detail: '詳細を見る', preview: 'プレビュー', browse: '作品を見る', read: '続きを読む', top: 'トップへ戻る', playMusic: '音楽を再生', viewSetting: '設定を見る', enterPage: 'ページへ',
       musicPlay: 'BGM を再生', musicPause: 'BGM を停止', musicRestart: '最初から', musicVolume: '音量',
@@ -227,6 +244,10 @@ const translations = {
       c4t: '音楽', c4d: 'コードを書くときも、ぼーっとするときも、OP みたいな BGM が必要です。',
       c5t: '記事', c5d: 'サイト制作の記録やアニメからの連想、少しだけ中二っぽい真面目なメモもここにあります。',
       c6t: '連絡先', c6d: 'アニメ、青い夜景、コードが好きなら、ここからゆっくり見つけてください。',
+      galleryPreviewBadge: 'Gallery',
+      galleryPreviewTitle: '集めた画面のかけら',
+      galleryPreviewDesc: '好きな画像や生成したビジュアルを、シリーズごとに青いギャラリーへ少しずつしまっていきます。',
+      galleryPreviewAction: 'ギャラリーへ',
       ftBadge: 'Asa', ftTitle: '青い小宇宙に来てくれてありがとう', ftDesc: 'ここから少しでもアニメっぽさや夜風の感じ、あるいは Asa のゆっくりした気持ちが伝わったなら、それだけで十分です。', ftInfoTitle: 'キーワード', ftInfoDesc: 'アニメ / コーディング / 青 / 電車 / 夜景 / 内向型 / OP 脳'
     },
     profile: {
@@ -236,9 +257,9 @@ const translations = {
       worldTitle: '私の小さな世界観', worldDesc: 'もし私の日常が静かな番外編になるなら、たぶん夕方や夜にイヤホンをして青い空の下を歩き、そのあと家でアニメを見たりコードを書いたりする、そんなテンポです。',
       w1l: '舞台', w1v: '雨上がりの街、電車のホーム、静かな部屋、光る画面', w2l: '時間', w2v: '夕方から深夜までが一番好き', w3l: '色', w3v: '青系、特に夜空に近い色', w4l: '感情', w4v: '静か、ゆっくり、少し距離感、でも真面目',
       statusTitle: '今日の Asa', statusDesc: 'ここは主人公のステータス欄みたいなもの。最近考えていることや、好きなものが見えます。',
-      s1l: '現在のメインクエスト', s1v: '好きなものをページの中に少しずつ書き込むこと', s2l: 'よく使うスキル', s2v: 'フロントエンド実装 / 雰囲気づくり / 一人で細部を整えること', s3l: '隠し補正', s3v: '良い OP、青い夜景、電車のカットを見るとすぐに心が動く',
-      skillTitle: 'スキルツリー', skillDesc: '私のスキルポイントは、たぶん“空気感のあるページ”と“好きなアニメっぽさをそっと入れること”に振られています。',
-      k1d: 'ページをきれいに、細かく整える作業がすごく好きです。', k2d: 'アニメに出てくる青い空、風、光、電車の感じを自然に拾ってしまいます。', k3d: '派手な動きより、呼吸するような柔らかい動きを好みます。', k4d: '自分で多くを話すより、ページに少しずつ語ってもらう方が得意です。'
+      s1l: '現在のメインクエスト', s1v: '好きなものをページの中に少しずつ書き込むこと', s2l: 'よく使うスキル', s2v: 'バックエンド実装 / 雰囲気づくり / 一人で細部を整えること', s3l: '隠し補正', s3v: '良い OP、青い夜景、電車のカットを見るとすぐに心が動く',
+      skillTitle: 'スキルツリー', skillDesc: 'スキルポイントは主にバックエンド開発、業務サービス、AI ツール、分散システム設計に振っています。',
+      k1d: '主な得意分野はバックエンド開発で、API、データフロー、システムの安定性から考えることが多いです。', k2d: 'Java と PHP で業務サービスを構築し、コード構成、保守性、実装効率を大切にしています。', k3d: 'Python で自動化、データ処理、AI 関連の機能を扱い、アイデアを動くツールにするのが好きです。', k4d: 'マイクロサービスと分散システムの分割、通信、安定性設計を理解し、複雑な仕組みを少しずつ整理するのが得意です。'
     },
     about: {
       badge: '私について', title: '私について<span>と、口では言いにくいこと</span>', desc: '現実の私が自己紹介をうまくできないなら、ここがその代わりになります。',
@@ -260,8 +281,20 @@ const translations = {
     articles: {
       badge: '記事', title: '私の記事メモ<span>と、ちゃんとした独り言</span>', desc: 'アニメ、ページ、コード、気持ちについての小さな記録を置いています。口では言いにくいことほど、ここに書くことが多いです。',
       c1m1: 'アニメ感想 / デザイン随筆', c1t: 'どうして私は青い黄昏のアニメカットをページに持ち込みたくなるのか', c1d: '私のページの発想は、トレンドよりも、アニメの黄昏や電車のカットから来ていることが多いです。',
-      c2m1: 'フロントエンド記録', c2t: 'どうして私はページをアニメの絵コンテみたいに書きたくなるのか', c2d: '情報を並べるだけではなく、カメラワークみたいに見せたいといつも思っています。',
+      c2m1: 'バックエンド記録', c2t: 'どうして私はページをアニメの絵コンテみたいに書きたくなるのか', c2d: '情報を並べるだけではなく、カメラワークみたいに見せたいといつも思っています。',
       c3m1: '独り言 / 制作記録', c3t: '人見知りの i 人が、それでも真剣に個人サイトを作る理由', c3d: '直接うまく話せないからこそ、ページに代わりに語ってほしいと思っているのかもしれません。'
+    },
+    gallery: {
+      pageTitle: 'ギャラリー',
+      badge: 'Gallery',
+      title: 'ギャラリー<span>と集めた画面のかけら</span>',
+      desc: '好きな画像、生成したビジュアル、青いアニメのカットみたいなインスピレーションを置いていく場所です。',
+      albumsBadge: 'Albums',
+      albumsTitle: 'シリーズごとに見る',
+      albumsDesc: 'それぞれのシリーズは小さなビジュアル特集のように、カバーから詳細へ進めます。'
+    },
+    galleryDetail: {
+      pageTitle: 'ギャラリー詳細'
     },
     contact: {
       badge: '連絡先', title: '連絡先<span>と補足メモ</span>', desc: 'アニメ、コード、青い夜景や電車のシーンが好きなら、ここからゆっくり見つけてください。',
@@ -298,6 +331,7 @@ const translations = {
         about: ['言葉にしにくいことは、ここに少しずつ置いてあります。'],
         works: ['作品というより、小さなカット集に近いかもしれません。'],
         music: ['このページはイヤホンと一緒だとちょうどいいです。'],
+        gallery: ['ここには Asa の好きな画像や生成したビジュアルが少しずつ集まります。'],
         articles: ['ここには静かなメモが増えていきます。'],
         contact: ['好きなものが近ければ、ここからゆっくり見つけてください。'],
         default: ['このままゆっくり見ていってください。']
@@ -308,7 +342,7 @@ const translations = {
     pageTitle: 'Asa — anime, code, and blue nights',
     pageDescription: 'Asa’s personal site about anime, coding, blue nightscapes, and the quiet feelings of an introverted i-person.',
     brand: { name: 'Asa', tagline: 'An introverted blue-themed anime and coding lover' },
-    nav: { home: 'Home', profile: 'Profile', about: 'About', works: 'Works', music: 'Music', articles: 'Articles', contact: 'Contact' },
+    nav: { home: 'Home', profile: 'Profile', about: 'About', works: 'Works', music: 'Music', gallery: 'Gallery', articles: 'Articles', contact: 'Contact' },
     common: {
       homeIntroBadge: 'Blue anime mood', detail: 'View details', preview: 'Preview', browse: 'Browse work', read: 'Read more', top: 'Back to top', playMusic: 'Play music', viewSetting: 'View setting', enterPage: 'Open page',
       musicPlay: 'Play BGM', musicPause: 'Pause BGM', musicRestart: 'Restart', musicVolume: 'Volume',
@@ -330,6 +364,10 @@ const translations = {
       c4t: 'Music', c4d: 'When I code or drift off, I need BGM that feels like an opening theme.',
       c5t: 'Articles', c5d: 'My notes about anime, making sites, code, and a few serious little monologues.',
       c6t: 'Contact', c6d: 'If you also like anime, blue nightscapes, or code, you can find me here slowly.',
+      galleryPreviewBadge: 'Gallery',
+      galleryPreviewTitle: 'Collected visual fragments',
+      galleryPreviewDesc: 'A blue gallery for favorite images, generated visuals, and small scenes collected by series.',
+      galleryPreviewAction: 'Open gallery',
       ftBadge: 'Asa', ftTitle: 'Thanks for visiting my little blue universe', ftDesc: 'If this place lets you feel even a little anime mood, a little night breeze, or a little bit of Asa, then it has done its job.', ftInfoTitle: 'Keywords', ftInfoDesc: 'anime / coding / blue / trains / night / introvert / opening-theme brain'
     },
     profile: {
@@ -339,9 +377,9 @@ const translations = {
       worldTitle: 'My little worldbuilding panel', worldDesc: 'If my everyday life were an anime side episode, it would probably be evenings, earphones, blue skies, trains, and then going home to watch anime and quietly write code.',
       w1l: 'Stage', w1v: 'Rainy city streets, train platforms, a quiet room, and a glowing screen', w2l: 'Time', w2v: 'From evening to late night — my favorite hours', w3l: 'Color', w3v: 'Blue, especially the kind that feels like night sky', w4l: 'Emotion', w4v: 'Quiet, slow, distant at first, but sincere',
       statusTitle: 'Today’s Asa', statusDesc: 'This is like my status bar — what I am thinking about, what I like, and what emotional weather I carry around.',
-      s1l: 'Current main quest', s1v: 'Slowly writing everything I love into my own pages', s2l: 'Common abilities', s2v: 'Frontend implementation / atmosphere building / refining details alone', s3l: 'Hidden bonus', s3v: 'Instant emotional damage from good OPs, blue nights, and train shots',
-      skillTitle: 'Skill Tree', skillDesc: 'Most of my points are probably invested in “page atmosphere” and “quiet anime-like storytelling.”',
-      k1d: 'I love polishing pages until they feel clean, soft, and exactly right.', k2d: 'I naturally pick up blue skies, wind, lights, and train moods from anime scenes.', k3d: 'I prefer lighter motion — not loud effects, but breathing space.', k4d: 'Instead of talking a lot myself, I let pages speak for me little by little.'
+      s1l: 'Current main quest', s1v: 'Slowly writing everything I love into my own pages', s2l: 'Common abilities', s2v: 'Backend implementation / atmosphere building / refining details alone', s3l: 'Hidden bonus', s3v: 'Instant emotional damage from good OPs, blue nights, and train shots',
+      skillTitle: 'Skill Tree', skillDesc: 'Most of my points are invested in backend development, business services, AI tools, and distributed system design.',
+      k1d: 'My main skill points are in backend development, thinking through APIs, data flow, and system stability.', k2d: 'I build business services with Java and PHP, focusing on structure, maintainability, and practical delivery.', k3d: 'I use Python for automation, data work, and AI-related capabilities, turning ideas into usable tools quickly.', k4d: 'I understand microservice and distributed-system splitting, communication, and stability design, and I like untangling complex systems step by step.'
     },
     about: {
       badge: 'About me', title: 'About Me <span>& Things I Rarely Say Out Loud</span>', desc: 'If I am not good at introducing myself directly, this page can do it for me.',
@@ -363,8 +401,20 @@ const translations = {
     articles: {
       badge: 'Articles', title: 'My Notes <span>& the monologues I take seriously</span>', desc: 'This is where I leave small records about anime, websites, code, and feelings. The things I cannot say easily usually end up here.',
       c1m1: 'Anime thoughts / design essay', c1t: 'Why blue anime twilight always slips into my pages', c1d: 'A lot of my visual ideas come less from trends and more from anime scenes with trains, dusk, and blue skies.',
-      c2m1: 'Frontend notes', c2t: 'Why I want pages to feel like anime storyboards', c2d: 'I care less about dumping information and more about how a page unfolds like a scene.',
+      c2m1: 'Backend notes', c2t: 'Why I want pages to feel like anime storyboards', c2d: 'I care less about dumping information and more about how a page unfolds like a scene.',
       c3m1: 'Monologue / creation log', c3t: 'Why an introverted i-person still takes a personal site seriously', c3d: 'Maybe because I cannot always speak directly, I want a page to speak for me instead.'
+    },
+    gallery: {
+      pageTitle: 'Gallery',
+      badge: 'Gallery',
+      title: 'Gallery<span>and collected visual fragments</span>',
+      desc: 'A place for collected images, generated visuals, and blue anime-like frames that feel worth keeping.',
+      albumsBadge: 'Albums',
+      albumsTitle: 'Browse by series',
+      albumsDesc: 'Each series works like a small visual exhibit, with a cover leading into the detail view.'
+    },
+    galleryDetail: {
+      pageTitle: 'Gallery Detail'
     },
     contact: {
       badge: 'Contact', title: 'Contact <span>& a few extra notes</span>', desc: 'If you like anime, code, blue nightscapes, or train scenes too, you can find me here slowly.',
@@ -401,6 +451,7 @@ const translations = {
         about: ['Things that are hard to say out loud are left here little by little.'],
         works: ['These pages feel more like saved scenes than pure projects.'],
         music: ['This page works best with earphones on.'],
+        gallery: ['This is where Asa keeps favorite images and generated visuals.'],
         articles: ['This is where the quieter notes keep growing.'],
         contact: ['If you like similar things, you can find her from here slowly.'],
         default: ['Feel free to keep looking around slowly.']

@@ -3,27 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>文章列表</title>
-  <meta name="description" content="文章列表页面。" />
+  <title>图库详情</title>
+  <meta name="description" content="Asa 的图库系列详情页。" />
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body data-title-key="nav.articles">
+<body data-title-key="galleryDetail.pageTitle" data-page="gallery-detail">
   <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
   <div class="sakura-layer" aria-hidden="true"></div>
   <div class="star-layer" aria-hidden="true"></div>
+
   <header class="site-header">
     <div class="nav-wrap">
-      <a class="brand" href="./index.html"><div class="brand-mark">HK</div><div class="brand-text"><strong data-i18n="brand.name">Hoshino Kaito</strong><span data-i18n="brand.tagline">会发光的二次元个人小宇宙</span></div></a>
+      <a class="brand" href="./index.html"><div class="brand-mark">A</div><div class="brand-text"><strong data-i18n="brand.name">Asa</strong><span data-i18n="brand.tagline">爱看番也爱敲代码的蓝色系社恐 i 人</span></div></a>
       <div class="lang-switcher"><button class="lang-btn active" type="button" data-lang="zh-CN">简体</button><button class="lang-btn" type="button" data-lang="ja">日本語</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
-      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav-links">
         <a href="./index.html" data-i18n="nav.home">首页</a>
         <a href="./profile.html" data-i18n="nav.profile">角色档案</a>
         <a href="./about.html" data-i18n="nav.about">关于我</a>
         <a href="./works.html" data-i18n="nav.works">作品</a>
         <a href="./music.html" data-i18n="nav.music">音乐</a>
-        <a href="./gallery.html" data-i18n="nav.gallery">图库</a>
-        <a class="active" href="./articles.html" data-i18n="nav.articles">文章</a>
+        <a class="active" href="./gallery.html" data-i18n="nav.gallery">图库</a>
+        <a href="./articles.html" data-i18n="nav.articles">文章</a>
         <a href="./contact.html" data-i18n="nav.contact">联系</a>
       </nav>
     </div>
@@ -31,15 +32,11 @@
 
   <main>
     <section class="page-hero reveal">
-      <div class="page-intro">
-        <span class="section-badge" data-i18n="articles.badge">Articles</span>
-        <h1 data-i18n-html="articles.title">文章小手账<span>与灵感记录</span></h1>
-        <p data-i18n="articles.desc">这里会收纳设计随笔、动效笔记和创作碎碎念，现在已经支持本地新增和修改啦。</p>
-      </div>
+      <div class="page-intro" id="gallery-detail-hero"></div>
     </section>
 
     <section class="section reveal">
-      <div class="articles-grid" id="articles-list"></div>
+      <div class="gallery-masonry" id="gallery-masonry"></div>
     </section>
   </main>
 

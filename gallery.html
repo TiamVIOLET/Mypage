@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>文章详情</title>
-  <meta name="description" content="Asa 的文章详情页。" />
+  <title>图库</title>
+  <meta name="description" content="Asa 的图片收藏与生成图图库。" />
   <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
+<body data-title-key="gallery.pageTitle" data-page="gallery">
   <div class="bg-orbs" aria-hidden="true"><div class="orb one"></div><div class="orb two"></div><div class="orb three"></div></div>
   <div class="sakura-layer" aria-hidden="true"></div>
   <div class="star-layer" aria-hidden="true"></div>
@@ -16,28 +16,41 @@
     <div class="nav-wrap">
       <a class="brand" href="./index.html"><div class="brand-mark">A</div><div class="brand-text"><strong data-i18n="brand.name">Asa</strong><span data-i18n="brand.tagline">爱看番也爱敲代码的蓝色系社恐 i 人</span></div></a>
       <div class="lang-switcher"><button class="lang-btn active" type="button" data-lang="zh-CN">简体</button><button class="lang-btn" type="button" data-lang="ja">日本語</button><button class="lang-btn" type="button" data-lang="en">EN</button></div>
-      <button class="menu-toggle" type="button" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="menu-toggle" type="button" aria-label="切换导航菜单" aria-expanded="false"><span></span><span></span><span></span></button>
       <nav class="nav-links">
         <a href="./index.html" data-i18n="nav.home">首页</a>
         <a href="./profile.html" data-i18n="nav.profile">角色档案</a>
         <a href="./about.html" data-i18n="nav.about">关于我</a>
         <a href="./works.html" data-i18n="nav.works">作品</a>
         <a href="./music.html" data-i18n="nav.music">音乐</a>
-        <a href="./gallery.html" data-i18n="nav.gallery">图库</a>
-        <a class="active" href="./articles.html" data-i18n="nav.articles">文章</a>
+        <a class="active" href="./gallery.html" data-i18n="nav.gallery">图库</a>
+        <a href="./articles.html" data-i18n="nav.articles">文章</a>
         <a href="./contact.html" data-i18n="nav.contact">联系</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="page-hero reveal">
-      <div class="page-intro" id="article-detail-hero"></div>
+    <section class="page-hero gallery-hero reveal">
+      <div class="gallery-hero-grid">
+        <div class="page-intro">
+          <span class="section-badge" data-i18n="gallery.badge">Gallery</span>
+          <h1 data-i18n-html="gallery.title">图库<span>和我收集的画面碎片</span></h1>
+          <p data-i18n="gallery.desc">这里会放我收集的图片、生成的图片，以及那些很像蓝色番剧分镜的视觉灵感。</p>
+        </div>
+        <div class="gallery-collage" id="gallery-featured-collage" aria-label="精选图库拼贴"></div>
+      </div>
     </section>
 
     <section class="section reveal">
-      <div class="detail-content-grid" id="article-detail-content"></div>
-      <div class="detail-nav-grid" id="article-detail-nav"></div>
+      <div class="section-head">
+        <div>
+          <span class="section-badge" data-i18n="gallery.albumsBadge">Albums</span>
+          <h2 class="section-title" data-i18n="gallery.albumsTitle">按系列慢慢浏览</h2>
+          <p class="section-desc" data-i18n="gallery.albumsDesc">每个系列都像一小格视觉专题，可以从封面进入详情。</p>
+        </div>
+      </div>
+      <div class="gallery-albums-grid" id="gallery-albums"></div>
     </section>
   </main>
 
